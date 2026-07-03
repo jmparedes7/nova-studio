@@ -26,6 +26,18 @@ export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
   const visual = data.visual;
   const isSystemVisual = visual?.mode === "system";
   const isClinic = theme === "clinic";
+  const navItems = isClinic
+    ? [
+        { label: "Tratamientos", href: "#servicios" },
+        { label: "Proceso", href: "#proceso" },
+        { label: "Testimonios", href: "#testimonios" },
+        { label: "Ubicación", href: "#ubicacion" },
+      ]
+    : [
+        { label: "Servicios", href: "#servicios" },
+        { label: "Proceso", href: "#proceso" },
+        { label: "Contacto", href: "#contacto" },
+      ];
 
   return (
     <section
@@ -47,6 +59,21 @@ export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
           >
             {data.businessName}
           </a>
+          <div
+            className={`hidden items-center gap-5 text-sm font-semibold lg:flex ${
+              isSystemVisual ? "text-[#F6F1E8]/68" : "text-[var(--landing-muted)]"
+            }`}
+          >
+            {navItems.map((item) => (
+              <a
+                className="transition hover:text-[var(--landing-accent)]"
+                href={item.href}
+                key={item.href}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
           <a
             className={`rounded-full border px-4 py-2 text-sm font-semibold transition hover:border-[var(--landing-accent)] ${
               isSystemVisual

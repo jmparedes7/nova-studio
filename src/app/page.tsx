@@ -1,6 +1,9 @@
-import { LandingPage } from "@/components/landing-page";
+import { AgencyHomePage } from "@/components/agency-home-page";
 import { agencyLanding } from "@/data/agency-landing";
+import { createLandingMetadata } from "@/templates/landing-metadata";
+
+export const metadata = createLandingMetadata(agencyLanding);
 
 export default function Home() {
-  return <LandingPage data={agencyLanding} />;
+  return <AgencyHomePage data={agencyLanding} />;
 }
