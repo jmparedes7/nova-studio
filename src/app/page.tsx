@@ -1,5 +1,6 @@
-import { NovaHomePage } from "@/components/nova-home-page";
+import { LandingPage } from "@/components/landing-page";
+import { agencyLanding } from "@/data/agency-landing";
 
 export default function Home() {
-  return <NovaHomePage />;
+  return <LandingPage data={agencyLanding} />;
 }
