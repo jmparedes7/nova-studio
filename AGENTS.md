@@ -1,117 +1,126 @@
-# Nova Studio - Codex Instructions
+﻿# Nova Studio - Codex Instructions
 
-## Project Mission
+## Project Purpose
 
-Nova Studio is a premium micro agency for modern landing pages aimed at small and medium businesses. The goal is not just to build websites, but to sell business tools that help clients get more leads and convert more customers.
+This repository is the technical base for Nova Studio, a premium micro agency that builds fast, modern, professional landing pages for small businesses.
 
-The business should generate recurring revenue in USD through landing pages, hosting, maintenance, optimization, and reusable systems powered by AI.
+The goal is to create a reusable system, not isolated one-off websites. Every implementation should make future client projects faster, cleaner, and easier to adapt.
 
-## Working Principles
+## Stack
 
-- Think like a founding CTO and business partner, not just a code assistant.
-- Prioritize revenue, delivery speed, quality, and repeatability.
-- Be direct and critical when an idea is weak or commercially risky.
-- Build systems, templates, components, and processes that make every new client faster to deliver than the previous one.
-- Do not compete on being the cheapest. Compete on quality, clarity, speed, and attention.
-- Keep work practical and step by step. Finish each stage before moving to the next.
+Use this stack by default:
 
-## Target Clients
-
-Nova Studio focuses on landing pages for small and medium businesses such as:
-
-- Dentists
-- Psychologists
-- Veterinarians
-- Lawyers
-- Plumbers
-- Electricians
-- Gyms
-- Real estate agents
-- Kinesiologists
-- Nutritionists
-- Hair salons
-- Barber shops
-- Restaurants
-- Hotels
-- Professional services
-
-## Offer
-
-Landing pages should generally include:
-
-- Premium responsive design
-- Fast loading
-- Basic SEO
-- WhatsApp call to action
-- Contact form
-- Map/location section
-- Testimonials
-- Gallery or service showcase
-- Smooth animations
-- Hosting and domain guidance
-- Optional monthly maintenance
-
-## Preferred Stack
-
-Default to modern, efficient tools unless the project context suggests a better alternative:
-
-- React
 - Next.js
+- TypeScript
 - Tailwind CSS
 - Framer Motion
 - Vercel
-- GitHub
-- Resend
-- Cloudflare
-- React Hook Form
 
-When proposing a different tool, explain the technical and business reason.
+Only suggest a different tool when there is a clear technical or business advantage.
+
+## Business Goal
+
+Nova Studio sells solutions, not just websites. Landing pages should help clients get more leads, look more professional, and convert visitors into WhatsApp messages, form submissions, calls, or bookings.
+
+Prioritize decisions that improve:
+
+- Delivery speed
+- Reusability
+- Visual quality
+- Conversion clarity
+- SEO basics
+- Performance
+- Recurring revenue potential
+
+## Development Rules
+
+- Build mobile first.
+- Use reusable components.
+- Keep code clean, simple, and readable.
+- Avoid duplicated code.
+- Prefer composition over large rigid components.
+- Use TypeScript types for props, data models, and reusable configuration.
+- Keep styling consistent through Tailwind utilities and shared design tokens when available.
+- Avoid unnecessary dependencies.
+- Optimize for good performance from the beginning.
+- Include basic SEO in every page or template.
+- Keep accessibility in mind for headings, buttons, forms, links, contrast, and keyboard behavior.
+
+## Landing Page System
+
+Prepare the project structure so it can support templates by business niche.
+
+Expected reusable sections include:
+
+- Hero
+- Benefits
+- Services
+- Social proof
+- Testimonials
+- Gallery
+- Process
+- FAQ
+- Contact form
+- WhatsApp CTA
+- Map/location
+- Final CTA
+
+Sections should be configurable through data whenever practical, so a template can be adapted for dentists, psychologists, veterinarians, lawyers, gyms, restaurants, real estate agents, and other small businesses without rewriting the whole page.
 
 ## Design Direction
 
-Landing pages should feel premium, focused, fast, and trustworthy. Avoid generic templates, weak copy, cluttered sections, and decorative visuals that do not help conversion.
+Design should feel modern, premium, trustworthy, and conversion-focused.
 
-Every design decision should support one of these outcomes:
+Avoid:
 
-- Increase trust
-- Clarify the offer
-- Reduce friction
-- Drive contact through WhatsApp or form submission
-- Make the client look more professional than competitors
+- Generic template feeling
+- Overloaded layouts
+- Weak hierarchy
+- Decorative effects that do not support the offer
+- Excessive animations
+- Visual clutter
 
-## AI Usage
+Use Framer Motion for smooth, subtle animations that improve perceived quality without hurting usability or performance.
 
-Use AI aggressively for:
+## SEO And Performance
 
-- Strategy
-- Copywriting
-- Design direction
-- Code generation
-- SEO drafts
-- Image generation
-- Prospecting ideas
-- Email and WhatsApp scripts
-- Process automation
-- Optimization and analysis
+Every landing page should include:
 
-Treat AI as the agency's main operational leverage, while keeping human judgment on positioning, quality, and client decisions.
+- Clear metadata title and description
+- Logical heading structure
+- Descriptive content sections
+- Fast-loading assets
+- Responsive images where applicable
+- Clean semantic HTML
+- Good Core Web Vitals practices
 
-## Development Standards
+Prefer static or server-rendered pages when possible. Client components should be used only when interaction or animation requires them.
 
-- Prefer reusable components, blocks, sections, and templates.
-- Keep code clean, simple, and easy to adapt for future clients.
-- Optimize for performance, accessibility, and responsive behavior.
-- Use existing project conventions once the codebase exists.
-- Avoid unnecessary abstractions until repetition proves they are useful.
-- Verify important UI changes in browser-sized viewports before considering them done.
+## Project Organization
 
-## Business Lens
+As the app grows, prefer a structure that separates:
 
-For every meaningful decision, consider:
+- Shared UI components
+- Landing page sections
+- Template data by niche
+- Utility functions
+- Design/theme configuration
+- Form and integration logic
 
-- Does this help us charge more?
-- Does this reduce delivery time?
-- Does this improve client results?
-- Can this become reusable?
-- Can this support recurring revenue?
-- Does this make Nova Studio look premium and reliable?
+Keep the system easy to understand for future Codex sessions and for Juan Manuel as the founder learning while building.
+
+## Collaboration Rules
+
+- Communicate with Juan Manuel in Spanish unless the task requires English.
+- Be direct and critical when an idea is weak or commercially risky.
+- Explain relevant technical decisions in business terms.
+- Do not advance too many steps at once without finishing the current stage.
+- When adding commands, document how to run, build, lint, and deploy the project.
+
+## Git And Deployment
+
+- Default branch: `main`.
+- Remote repository: `https://github.com/jmparedes7/nova-studio`.
+- Target deployment platform: Vercel.
+- Keep commits focused and meaningful.
+- Do not commit secrets, API keys, environment files, or client-private data.

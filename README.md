@@ -1,17 +1,55 @@
 # Nova Studio
 
-Nova Studio is a premium micro agency system for creating modern landing pages for small and medium businesses.
+Base tecnica para una micro agencia de landing pages premium para pequenos negocios.
 
-The project combines business strategy, reusable web development, design direction, sales process, portfolio creation, and AI-powered automation.
+## Stack
 
-## Core Goal
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vercel
 
-Build a real agency that generates recurring revenue in USD by delivering high-quality landing pages quickly and consistently.
+## Objetivo
 
-## Main Areas
+Crear un sistema reutilizable para construir landing pages rapidas, modernas y profesionales, con estructura preparada para templates por rubro.
 
-- Direccion General
-- Desarrollo / Codex
-- Diseno
-- Ventas
+Rubros iniciales:
+
+- Odontologia
+- Psicologia
+- Veterinaria
+- Gimnasio
+- Servicios profesionales
+
+## Estructura
+
+```text
+src/
+  app/                  App Router de Next.js
+  components/
+    animation/          Componentes con Framer Motion
+    sections/           Secciones reutilizables de landing
+    ui/                 Componentes base de interfaz
+  data/                 Contenido configurable
+  templates/            Tipos y blueprint para templates por rubro
+```
+
+## Comandos
+
+```bash
+npm install
+npm run dev
+npm run build
+npm run lint
+```
+
+## Secciones incluidas
+
+- Hero
+- Servicios
 - Portfolio
+- Proceso
+- Precios
+- FAQ
+- Contacto
