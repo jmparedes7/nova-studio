@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
 type FadeInProps<T extends ElementType> = {
@@ -18,14 +18,16 @@ export function FadeIn<T extends ElementType = "div">({
   ...props
 }: FadeInProps<T>) {
   const Component = motion(as ?? "div");
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <Component
       className={className}
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, ease: "easeOut", delay }}
-      viewport={{ once: true, margin: "-80px" }}
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={
+        shouldReduceMotion ? { duration: 0 } : { duration: 0.55, ease: "easeOut", delay }
+      }
       {...props}
     >
       {children}

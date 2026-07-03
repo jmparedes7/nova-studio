@@ -21,7 +21,7 @@ export function LocationSection({ data }: LocationSectionProps) {
             <p className="mt-5 leading-8 text-ink/70">{data.description}</p>
             <div className="mt-8 rounded-3xl border border-ink/10 bg-fog p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-                Direccion
+                Dirección
               </p>
               <p className="mt-3 text-lg font-bold text-ink">{data.address}</p>
               <p className="mt-1 text-ink/64">{data.neighborhood}</p>

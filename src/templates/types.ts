@@ -16,6 +16,7 @@ export type TemplateNiche = {
 
 export type HeroData = {
   businessName: string;
+  demoLabel?: string;
   eyebrow: string;
   title: string;
   description: string;

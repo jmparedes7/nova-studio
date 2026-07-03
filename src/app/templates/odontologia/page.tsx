@@ -12,16 +12,16 @@ import { WhatsappFloatingButton } from "@/components/whatsapp-floating-button";
 import { odontologiaLanding } from "@/data/odontologia-landing";
 
 export const metadata: Metadata = {
-  title: "Clinica Dental Nova | Odontologia integral en Palermo",
+  title: "Demo conceptual dental | Nova Studio",
   description:
-    "Clinica odontologica en Palermo, CABA. Implantes dentales, ortodoncia estetica, urgencias, atencion familiar y primera evaluacion por WhatsApp.",
+    "Demo conceptual de una landing premium para una clínica dental. No corresponde a un cliente real de Nova Studio.",
   openGraph: {
-    title: "Clinica Dental Nova | Odontologia integral en Palermo",
+    title: "Demo conceptual dental | Nova Studio",
     description:
-      "Reserva tu primera evaluacion odontologica en CABA. Implantes, ortodoncia estetica, urgencias y atencion familiar.",
+      "Así podría verse una landing premium para una clínica dental: conversión, confianza y claridad comercial.",
     type: "website",
     locale: "es_AR",
-    siteName: "Clinica Dental Nova",
+    siteName: "Nova Studio",
   },
 };
 
@@ -42,8 +42,8 @@ export default function OdontologiaTemplatePage() {
         steps={odontologiaLanding.process}
       />
       <PricingSection
-        ctaHref={odontologiaLanding.brand.whatsappHref}
-        ctaLabel="Consultar por WhatsApp"
+        ctaHref="#contacto"
+        ctaLabel="Simular consulta"
         heading={odontologiaLanding.sectionHeadings.pricing}
         plans={odontologiaLanding.pricing}
       />
@@ -58,8 +58,8 @@ export default function OdontologiaTemplatePage() {
       <LocationSection data={odontologiaLanding.location} />
       <ContactSection data={odontologiaLanding.contact} />
       <WhatsappFloatingButton
-        href={odontologiaLanding.brand.whatsappHref}
-        label="Pedir turno"
+        href="#contacto"
+        label="Ver consulta"
       />
     </main>
   );
