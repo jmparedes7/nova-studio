@@ -20,7 +20,7 @@ export function ProcessSection({
   heading = defaultHeading,
 }: ProcessSectionProps) {
   return (
-    <section className="bg-ink py-20 text-bone sm:py-24" id="proceso">
+    <section className="bg-[var(--landing-primary)] py-20 text-bone sm:py-24" id="proceso">
       <Container>
         <SectionHeading
           eyebrow={heading.eyebrow}
@@ -35,7 +35,7 @@ export function ProcessSection({
               delay={index * 0.05}
               key={step.step}
             >
-              <span className="text-sm font-bold text-copper">{step.step}</span>
+              <span className="text-sm font-bold text-[var(--landing-accent)]">{step.step}</span>
               <h3 className="mt-5 text-xl font-bold">{step.title}</h3>
               <p className="mt-3 leading-7 text-bone/68">{step.description}</p>
             </FadeIn>

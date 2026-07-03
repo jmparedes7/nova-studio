@@ -25,7 +25,7 @@ export function PricingSection({
   ctaLabel = "Consultar",
 }: PricingSectionProps) {
   return (
-    <section className="bg-white py-20 sm:py-24" id="precios">
+    <section className="bg-[var(--landing-band)] py-20 sm:py-24" id="precios">
       <Container>
         <SectionHeading
           eyebrow={heading.eyebrow}
@@ -37,8 +37,8 @@ export function PricingSection({
             <FadeIn
               className={`rounded-3xl border p-6 ${
                 plan.highlighted
-                  ? "border-copper bg-ink text-bone shadow-soft"
-                  : "border-ink/10 bg-fog text-ink"
+                  ? "border-[var(--landing-accent)] bg-[var(--landing-primary)] text-bone shadow-soft"
+                  : "border-ink/10 bg-[var(--landing-soft)] text-[var(--landing-ink)]"
               }`}
               delay={index * 0.05}
               key={plan.name}
@@ -66,7 +66,9 @@ export function PricingSection({
                   <li className="flex gap-3 text-sm" key={feature}>
                     <span
                       className={`mt-1 h-2 w-2 rounded-full ${
-                        plan.highlighted ? "bg-copper" : "bg-moss"
+                        plan.highlighted
+                          ? "bg-[var(--landing-accent)]"
+                          : "bg-[var(--landing-primary)]"
                       }`}
                     />
                     <span

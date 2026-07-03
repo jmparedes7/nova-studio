@@ -1,15 +1,6 @@
 import type {
   BusinessBrand,
-  ContactData,
-  FaqItem,
-  HeroData,
-  LocationData,
-  PortfolioItem,
-  PricingPlan,
-  ProcessStep,
-  SectionCopy,
-  ServiceItem,
-  TestimonialItem,
+  LandingPageData,
 } from "@/templates/types";
 
 const whatsappMessage =
@@ -33,27 +24,15 @@ export const dentalNovaBrand: BusinessBrand = {
   whatsappHref,
 };
 
-export const odontologiaLanding: {
-  brand: BusinessBrand;
-  hero: HeroData;
-  sectionHeadings: {
-    services: SectionCopy;
-    portfolio: SectionCopy;
-    process: SectionCopy;
-    pricing: SectionCopy;
-    testimonials: SectionCopy;
-    faq: SectionCopy;
-  };
-  services: ServiceItem[];
-  portfolio: PortfolioItem[];
-  process: ProcessStep[];
-  pricing: PricingPlan[];
-  testimonials: TestimonialItem[];
-  faq: FaqItem[];
-  location: LocationData;
-  contact: ContactData;
-} = {
+export const odontologiaLanding: LandingPageData = {
   brand: dentalNovaBrand,
+  theme: "clinic",
+  seo: {
+    title: "Demo conceptual dental | Nova Studio",
+    description:
+      "Demo conceptual de una landing premium para una clínica dental. No corresponde a un cliente real de Nova Studio.",
+    siteName: "Nova Studio",
+  },
   hero: {
     businessName: dentalNovaBrand.businessName,
     demoLabel: "Demo conceptual de Nova Studio",
@@ -69,10 +48,22 @@ export const odontologiaLanding: {
     previewItems: ["Implantes", "Ortodoncia", "Urgencias"],
     notificationTitle: "Turno solicitado",
     notificationText: "Primera evaluación por WhatsApp",
+    microcopy:
+      "Demo conceptual: el WhatsApp se conecta al número real al publicar para un cliente.",
+    visual: {
+      imageSrc: "/odontologia/hero.png",
+      imageAlt:
+        "Dentista conversando con una paciente en un consultorio moderno",
+      trustBadge: "Demo",
+      appointmentEyebrow: "Próximo turno",
+      appointmentTitle: "Evaluación inicial",
+      appointmentMeta: ["Palermo", "24 hs"],
+      detailEyebrow: "Tratamientos",
+    },
     stats: [
-      { value: "Demo", label: "conceptual" },
-      { value: "CTA", label: "WhatsApp" },
-      { value: "SEO", label: "local" },
+      { value: "Turnos", label: "claros" },
+      { value: "Trat.", label: "integrales" },
+      { value: "Conf.", label: "clínica" },
     ],
   },
   sectionHeadings: {
@@ -151,18 +142,30 @@ export const odontologiaLanding: {
       title: "Primera consulta sin vueltas",
       result:
         "Te explicamos qué está pasando, qué opciones tenés y qué pasos conviene seguir.",
+      imageSrc: "/odontologia/hero.png",
+      visualBadge: "Evaluación",
+      visualDetail: "Diagnóstico claro",
+      visualPosition: "50% 42%",
     },
     {
       niche: "Tecnología",
       title: "Planificación precisa",
       result:
         "Usamos recursos digitales para evaluar mejor cada caso y planificar tratamientos con más seguridad.",
+      imageSrc: "/odontologia/hero.png",
+      visualBadge: "Tecnología",
+      visualDetail: "Plan digital",
+      visualPosition: "58% 46%",
     },
     {
       niche: "Cercanía",
       title: "Seguimiento personalizado",
       result:
         "Acompañamos el proceso con controles, indicaciones claras y comunicación directa.",
+      imageSrc: "/odontologia/hero.png",
+      visualBadge: "Seguimiento",
+      visualDetail: "Control cercano",
+      visualPosition: "42% 50%",
     },
   ],
   process: [
@@ -298,5 +301,13 @@ export const odontologiaLanding: {
       message: "Contanos brevemente qué necesitás.",
     },
     submitLabel: "Simular consulta",
+  },
+  pricingCta: {
+    href: "#contacto",
+    label: "Simular consulta",
+  },
+  floatingCta: {
+    href: "#contacto",
+    label: "Ver consulta",
   },
 };

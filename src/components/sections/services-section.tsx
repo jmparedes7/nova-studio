@@ -20,7 +20,7 @@ export function ServicesSection({
   heading = defaultHeading,
 }: ServicesSectionProps) {
   return (
-    <section className="bg-white py-20 sm:py-24" id="servicios">
+    <section className="bg-[var(--landing-band)] py-20 sm:py-24" id="servicios">
       <Container>
         <SectionHeading
           eyebrow={heading.eyebrow}
@@ -33,18 +33,18 @@ export function ServicesSection({
 
             return (
             <FadeIn
-              className={`group rounded-3xl border border-ink/10 bg-fog p-6 transition duration-200 hover:-translate-y-0.5 hover:border-copper/45 hover:bg-white hover:shadow-[0_18px_44px_rgba(21,23,22,0.08)] ${
+              className={`group rounded-3xl border border-ink/10 bg-[var(--landing-soft)] p-6 transition duration-200 hover:-translate-y-0.5 hover:border-[var(--landing-accent)] hover:bg-white hover:shadow-[0_18px_44px_rgba(21,23,22,0.08)] ${
                 isFeatured ? "md:col-span-2 lg:col-span-2 lg:p-8" : ""
               }`}
               delay={index * 0.04}
               key={item.title}
             >
               <div className="mb-6 flex items-center justify-between gap-4">
-                <span className="grid size-10 place-items-center rounded-2xl border border-ink/10 bg-white text-sm font-bold text-copper transition group-hover:border-copper/40 group-hover:bg-bone">
+                <span className="grid size-10 place-items-center rounded-2xl border border-ink/10 bg-white text-sm font-bold text-[var(--landing-accent)] transition group-hover:border-[var(--landing-accent)] group-hover:bg-[var(--landing-bg)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {isFeatured ? (
-                  <span className="rounded-full bg-mint px-3 py-1 text-xs font-bold text-moss">
+                  <span className="rounded-full bg-[var(--landing-success)] px-3 py-1 text-xs font-bold text-[var(--landing-primary)]">
                     Tratamiento destacado
                   </span>
                 ) : null}

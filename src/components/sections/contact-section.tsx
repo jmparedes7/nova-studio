@@ -9,11 +9,11 @@ type ContactSectionProps = {
 
 export function ContactSection({ data }: ContactSectionProps) {
   return (
-    <section className="bg-white py-20 sm:py-24" id="contacto">
+    <section className="bg-[var(--landing-band)] py-20 sm:py-24" id="contacto">
       <Container>
-        <div className="grid gap-8 rounded-[2rem] bg-ink p-6 text-bone sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
+        <div className="grid gap-8 rounded-[2rem] bg-[var(--landing-primary)] p-6 text-bone sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
           <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-copper">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--landing-accent)]">
               Contacto
             </p>
             <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-5xl">
@@ -34,7 +34,7 @@ export function ContactSection({ data }: ContactSectionProps) {
                 <label className="text-sm font-semibold">
                   {data.formLabels.name}
                   <input
-                    className="mt-2 min-h-12 w-full rounded-2xl border border-ink/10 bg-white px-4 outline-none ring-copper/30 transition focus:ring-4"
+                    className="mt-2 min-h-12 w-full rounded-2xl border border-ink/10 bg-white px-4 outline-none ring-[var(--landing-accent)] transition focus:ring-4"
                     name="name"
                     placeholder={data.formPlaceholders.name}
                     type="text"
@@ -43,7 +43,7 @@ export function ContactSection({ data }: ContactSectionProps) {
                 <label className="text-sm font-semibold">
                   {data.formLabels.reason}
                   <input
-                    className="mt-2 min-h-12 w-full rounded-2xl border border-ink/10 bg-white px-4 outline-none ring-copper/30 transition focus:ring-4"
+                    className="mt-2 min-h-12 w-full rounded-2xl border border-ink/10 bg-white px-4 outline-none ring-[var(--landing-accent)] transition focus:ring-4"
                     name="reason"
                     placeholder={data.formPlaceholders.reason}
                     type="text"
@@ -53,7 +53,7 @@ export function ContactSection({ data }: ContactSectionProps) {
               <label className="mt-4 block text-sm font-semibold">
                 {data.formLabels.message}
                 <textarea
-                  className="mt-2 min-h-36 w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 outline-none ring-copper/30 transition focus:ring-4"
+                  className="mt-2 min-h-36 w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 outline-none ring-[var(--landing-accent)] transition focus:ring-4"
                   name="message"
                   placeholder={data.formPlaceholders.message}
                 />

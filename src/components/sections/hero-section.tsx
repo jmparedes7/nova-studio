@@ -22,15 +22,31 @@ function WhatsappIcon({ className = "" }: { className?: string }) {
 }
 
 export function HeroSection({ data }: HeroSectionProps) {
+  const visual = data.visual;
+  const isSystemVisual = visual?.mode === "system";
+
   return (
-    <section className="relative overflow-hidden pb-18 pt-6 sm:pb-24 lg:pb-28">
+    <section
+      className={`relative overflow-hidden pb-18 pt-6 sm:pb-24 lg:pb-28 ${
+        isSystemVisual ? "bg-[#101713]" : "bg-[var(--landing-bg)]"
+      }`}
+    >
       <Container>
         <nav className="flex items-center justify-between py-4">
-          <a className="text-lg font-bold tracking-tight text-ink" href="#">
+          <a
+            className={`text-lg font-bold tracking-tight ${
+              isSystemVisual ? "text-[#F6F1E8]" : "text-[var(--landing-ink)]"
+            }`}
+            href="#"
+          >
             {data.businessName}
           </a>
           <a
-            className="rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-copper"
+            className={`rounded-full border px-4 py-2 text-sm font-semibold transition hover:border-[var(--landing-accent)] ${
+              isSystemVisual
+                ? "border-[#F6F1E8]/18 text-[#F6F1E8]"
+                : "border-ink/15 text-[var(--landing-ink)]"
+            }`}
             href="#contacto"
           >
             Contacto
@@ -40,17 +56,35 @@ export function HeroSection({ data }: HeroSectionProps) {
         <div className="grid items-center gap-10 pt-10 lg:grid-cols-[0.98fr_1.02fr] lg:gap-14 lg:pt-16">
           <FadeIn>
             {data.demoLabel ? (
-              <p className="mb-4 inline-flex rounded-full border border-copper/25 bg-white/70 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-copper shadow-[0_10px_24px_rgba(21,23,22,0.05)]">
+              <p
+                className={`mb-4 inline-flex rounded-full border px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] shadow-[0_10px_24px_rgba(21,23,22,0.05)] ${
+                  isSystemVisual
+                    ? "border-[#B8FF5C]/25 bg-[#B8FF5C]/10 text-[#B8FF5C]"
+                    : "border-[var(--landing-accent-soft)] bg-white/70 text-[var(--landing-accent)]"
+                }`}
+              >
                 {data.demoLabel}
               </p>
             ) : null}
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-copper">
+            <p
+              className={`text-sm font-semibold uppercase tracking-[0.24em] ${
+                isSystemVisual ? "text-[#B8FF5C]" : "text-[var(--landing-accent)]"
+              }`}
+            >
               {data.eyebrow}
             </p>
-            <h1 className="mt-4 max-w-4xl font-serif text-[2.9rem] leading-[3.12rem] text-ink sm:text-6xl sm:leading-[1.02] lg:text-[4.45rem]">
+            <h1
+              className={`mt-4 max-w-4xl font-serif text-[2.9rem] leading-[3.12rem] sm:text-6xl sm:leading-[1.02] lg:text-[4.45rem] ${
+                isSystemVisual ? "text-[#F6F1E8]" : "text-[var(--landing-ink)]"
+              }`}
+            >
               {data.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-ink/72 sm:text-lg sm:leading-8">
+            <p
+              className={`mt-4 max-w-2xl text-base leading-7 sm:text-lg sm:leading-8 ${
+                isSystemVisual ? "text-[#F6F1E8]/70" : "text-[var(--landing-muted)]"
+              }`}
+            >
               {data.description}
             </p>
 
@@ -65,9 +99,15 @@ export function HeroSection({ data }: HeroSectionProps) {
                 {data.secondaryCta}
               </Button>
             </div>
-            <p className="mt-3 text-sm font-medium text-ink/62">
-              Demo conceptual: el WhatsApp se conecta al número real al publicar para un cliente.
-            </p>
+            {data.microcopy ? (
+              <p
+                className={`mt-3 text-sm font-medium ${
+                  isSystemVisual ? "text-[#F6F1E8]/58" : "text-ink/62"
+                }`}
+              >
+                {data.microcopy}
+              </p>
+            ) : null}
 
             <dl className="mt-8 grid max-w-2xl grid-cols-3 gap-2 sm:gap-3">
               {data.stats.map((stat) => (
@@ -75,10 +115,10 @@ export function HeroSection({ data }: HeroSectionProps) {
                   className="rounded-2xl border border-ink/10 bg-white/65 px-3 py-3 shadow-[0_12px_34px_rgba(21,23,22,0.06)] backdrop-blur sm:p-4"
                   key={stat.label}
                 >
-                  <dt className="whitespace-nowrap text-sm font-bold leading-5 text-ink sm:text-xl">
+                  <dt className="whitespace-nowrap text-sm font-bold leading-5 text-[var(--landing-ink)] sm:text-xl">
                     {stat.value}
                   </dt>
-                  <dd className="mt-0.5 whitespace-nowrap text-[0.7rem] font-medium leading-4 text-ink/60 sm:mt-1 sm:text-xs">
+                  <dd className="mt-0.5 whitespace-nowrap text-[0.7rem] font-medium leading-4 text-[var(--landing-muted)] sm:mt-1 sm:text-xs">
                     {stat.label}
                   </dd>
                 </div>
@@ -88,65 +128,199 @@ export function HeroSection({ data }: HeroSectionProps) {
 
           <FadeIn delay={0.14}>
             <div className="relative mx-auto max-w-xl">
-              <div className="absolute -left-4 top-8 hidden h-24 w-24 rounded-full border border-copper/25 bg-white/35 backdrop-blur sm:block" />
-              <div className="relative overflow-hidden rounded-[1.6rem] border border-white/70 bg-white p-3 shadow-soft sm:rounded-[2rem] sm:p-4">
-                <div className="relative min-h-[390px] overflow-hidden rounded-[1.25rem] bg-fog sm:min-h-[500px] sm:rounded-[1.55rem]">
-                  <Image
-                    alt="Dentista conversando con una paciente en un consultorio moderno"
-                    className="object-cover"
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 46vw, 90vw"
-                    src="/images/dental-nova-hero.png"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,23,22,0)_40%,rgba(21,23,22,0.68)_100%)]" />
-
-                  <div className="absolute left-4 right-4 top-4 flex items-center justify-between gap-3 sm:left-5 sm:right-5 sm:top-5">
-                    <div className="rounded-full bg-white/88 px-3 py-2 text-xs font-bold text-ink shadow-[0_10px_28px_rgba(21,23,22,0.1)] backdrop-blur">
-                      {data.statusLabel ?? "Turnos disponibles"}
-                    </div>
-                    <div className="rounded-full bg-mint/95 px-3 py-2 text-xs font-bold text-moss shadow-[0_10px_28px_rgba(21,23,22,0.08)]">
-                      Demo
-                    </div>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 right-4 grid gap-3 sm:bottom-5 sm:left-5 sm:right-auto sm:w-[78%] sm:grid-cols-[1fr_0.78fr]">
-                    <div className="rounded-3xl bg-white/92 p-4 text-ink shadow-[0_18px_50px_rgba(21,23,22,0.18)] backdrop-blur">
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-copper">
-                        Próximo turno
-                      </p>
-                      <p className="mt-2 text-lg font-bold leading-6">
-                        Evaluación inicial
-                      </p>
-                      <div className="mt-4 grid grid-cols-2 gap-2 text-xs font-semibold text-ink/68">
-                        <span className="rounded-2xl bg-fog px-3 py-2">
-                          Palermo
-                        </span>
-                        <span className="rounded-2xl bg-mint px-3 py-2 text-moss">
-                          24 hs
-                        </span>
+              {isSystemVisual ? (
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#F6F1E8]/12 bg-[#18221d] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.32)] sm:rounded-[2rem] sm:p-4">
+                  <div className="rounded-[1.35rem] border border-[#F6F1E8]/10 bg-[#0f1612] p-4 sm:p-5">
+                    <div className="flex items-center justify-between border-b border-[#F6F1E8]/10 pb-4">
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#B8FF5C]">
+                          Sistema Nova
+                        </p>
+                        <p className="mt-1 text-sm font-semibold text-[#F6F1E8]/72">
+                          Landings por rubro listas para vender
+                        </p>
                       </div>
+                      <span className="rounded-full bg-[#B8FF5C] px-3 py-1 text-xs font-black text-[#101713]">
+                        7 días
+                      </span>
                     </div>
-                    <div className="hidden rounded-3xl bg-ink/84 p-4 text-bone shadow-[0_18px_50px_rgba(21,23,22,0.16)] backdrop-blur sm:block">
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-copper">
-                        Tratamientos
-                      </p>
-                      <div className="mt-3 space-y-2">
-                      {(data.previewItems ?? [
-                        "Implantes",
-                        "Ortodoncia",
-                        "Urgencias",
-                      ]).map((item) => (
-                          <div className="flex items-center gap-2 text-sm font-semibold" key={item}>
-                            <span className="size-1.5 rounded-full bg-copper" />
-                            {item}
+                    <div className="grid gap-3 py-4 sm:grid-cols-[1fr_0.82fr]">
+                      <div className="rounded-3xl bg-[#F6F1E8] p-4 text-[#111312]">
+                        <div className="flex items-center justify-between gap-3">
+                          <span className="rounded-full bg-[#101713] px-3 py-1 text-xs font-bold text-[#F6F1E8]">
+                            Odontología
+                          </span>
+                          <span className="text-xs font-bold text-[#BD6F3C]">
+                            WhatsApp CTA
+                          </span>
+                        </div>
+                        <div className="mt-8 h-3 w-4/5 rounded-full bg-[#101713]" />
+                        <div className="mt-3 h-3 w-2/3 rounded-full bg-[#101713]/24" />
+                        <div className="mt-6 grid grid-cols-2 gap-2">
+                          <div className="h-20 rounded-2xl bg-[#dfe9e3]" />
+                          <div className="h-20 rounded-2xl bg-[#B8FF5C]/28" />
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        {(visual?.systemCards ?? []).slice(0, 3).map((card) => (
+                          <div
+                            className="rounded-2xl border border-[#F6F1E8]/10 bg-[#F6F1E8]/7 p-4"
+                            key={card.title}
+                          >
+                            <div className="flex items-center justify-between gap-3">
+                              <span className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#B8FF5C]">
+                                {card.eyebrow}
+                              </span>
+                              <span className="rounded-full bg-[#F6F1E8]/10 px-2 py-1 text-[0.68rem] font-bold text-[#F6F1E8]/70">
+                                {card.meta}
+                              </span>
+                            </div>
+                            <p className="mt-2 text-sm font-bold text-[#F6F1E8]">
+                              {card.title}
+                            </p>
+                            <p className="mt-1 text-xs leading-5 text-[#F6F1E8]/58">
+                              {card.description}
+                            </p>
                           </div>
-                      ))}
+                        ))}
                       </div>
+                    </div>
+                    <div className="grid gap-2 border-t border-[#F6F1E8]/10 pt-4 text-xs font-semibold text-[#F6F1E8]/68 sm:grid-cols-3">
+                      {(data.previewItems ?? []).map((item) => (
+                        <span
+                          className="rounded-2xl bg-[#F6F1E8]/8 px-3 py-2"
+                          key={item}
+                        >
+                          {item}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
+              ) : (
+                <>
+                  <div className="absolute -left-4 top-8 hidden h-24 w-24 rounded-full border border-[var(--landing-accent-soft)] bg-white/35 backdrop-blur sm:block" />
+                  <div className="relative overflow-hidden rounded-[1.6rem] border border-white/70 bg-white p-3 shadow-soft sm:rounded-[2rem] sm:p-4">
+                <div className="relative min-h-[390px] overflow-hidden rounded-[1.25rem] bg-fog sm:min-h-[500px] sm:rounded-[1.55rem]">
+                  {visual?.imageSrc ? (
+                    <>
+                      <Image
+                        alt={visual.imageAlt ?? ""}
+                        className="object-cover"
+                        fill
+                        priority
+                        sizes="(min-width: 1024px) 46vw, 90vw"
+                        src={visual.imageSrc}
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,23,22,0)_40%,rgba(21,23,22,0.68)_100%)]" />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 bg-bone p-4">
+                      <div className="h-full rounded-[1rem] bg-white p-4 shadow-soft">
+                        <div className="flex items-center justify-between border-b border-ink/10 pb-4">
+                          <div>
+                            <div className="h-3 w-24 rounded-full bg-moss" />
+                            <div className="mt-2 h-2 w-36 rounded-full bg-ink/12" />
+                          </div>
+                        <div className="rounded-full bg-[var(--landing-success)] px-3 py-1 text-xs font-semibold text-[var(--landing-primary)]">
+                            {data.statusLabel ?? "Online"}
+                          </div>
+                        </div>
+                        <div className="grid gap-3 py-5 sm:grid-cols-2">
+                          <div className="rounded-2xl bg-fog p-4">
+                            <div className="h-28 rounded-xl bg-[linear-gradient(135deg,#39483b,#d8f1df)]" />
+                            <div className="mt-4 h-3 w-3/4 rounded-full bg-ink/16" />
+                            <div className="mt-2 h-2 w-1/2 rounded-full bg-ink/10" />
+                          </div>
+                          <div className="space-y-3">
+                            {(data.previewItems ?? [
+                              "Hero",
+                              "Servicios",
+                              "Testimonios",
+                            ]).map((item) => (
+                              <div
+                                className="rounded-2xl border border-ink/10 bg-white p-4"
+                                key={item}
+                              >
+                                <div className="text-sm font-semibold text-ink">
+                                  {item}
+                                </div>
+                                <div className="mt-2 h-2 rounded-full bg-copper/35" />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="rounded-2xl bg-ink p-4 text-bone">
+                          <p className="text-sm font-semibold">
+                            {data.notificationTitle ?? "Consulta recibida"}
+                          </p>
+                          <p className="mt-1 text-xs text-bone/70">
+                            {data.notificationText ?? "Nuevo mensaje"}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {visual?.imageSrc ? (
+                    <>
+                      <div className="absolute left-4 right-4 top-4 flex items-center justify-between gap-3 sm:left-5 sm:right-5 sm:top-5">
+                        <div className="rounded-full bg-white/88 px-3 py-2 text-xs font-bold text-ink shadow-[0_10px_28px_rgba(21,23,22,0.1)] backdrop-blur">
+                          {data.statusLabel ?? "Disponible"}
+                        </div>
+                        <div className="rounded-full bg-[var(--landing-success)] px-3 py-2 text-xs font-bold text-[var(--landing-primary)] shadow-[0_10px_28px_rgba(21,23,22,0.08)]">
+                          {visual.trustBadge ?? "Demo"}
+                        </div>
+                      </div>
+
+                      <div className="absolute bottom-4 left-4 right-4 grid gap-3 sm:bottom-5 sm:left-5 sm:right-auto sm:w-[78%] sm:grid-cols-[1fr_0.78fr]">
+                        <div className="rounded-3xl bg-white/92 p-4 text-ink shadow-[0_18px_50px_rgba(21,23,22,0.18)] backdrop-blur">
+                          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--landing-accent)]">
+                            {visual.appointmentEyebrow ?? "Próximo paso"}
+                          </p>
+                          <p className="mt-2 text-lg font-bold leading-6">
+                            {visual.appointmentTitle ?? data.notificationTitle}
+                          </p>
+                          {visual.appointmentMeta?.length ? (
+                            <div className="mt-4 grid grid-cols-2 gap-2 text-xs font-semibold text-ink/68">
+                              {visual.appointmentMeta.slice(0, 2).map((item, index) => (
+                                <span
+                                  className={`rounded-2xl px-3 py-2 ${
+                                    index === 1
+                                      ? "bg-[var(--landing-success)] text-[var(--landing-primary)]"
+                                      : "bg-[var(--landing-soft)]"
+                                  }`}
+                                  key={item}
+                                >
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          ) : null}
+                        </div>
+                        <div className="hidden rounded-3xl bg-ink/84 p-4 text-bone shadow-[0_18px_50px_rgba(21,23,22,0.16)] backdrop-blur sm:block">
+                          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--landing-accent)]">
+                            {visual.detailEyebrow ?? "Detalle"}
+                          </p>
+                          <div className="mt-3 space-y-2">
+                            {(data.previewItems ?? []).map((item) => (
+                              <div
+                                className="flex items-center gap-2 text-sm font-semibold"
+                                key={item}
+                              >
+                                <span className="size-1.5 rounded-full bg-[var(--landing-accent)]" />
+                                {item}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : null}
+                </div>
               </div>
+                </>
+              )}
             </div>
           </FadeIn>
         </div>

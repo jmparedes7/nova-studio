@@ -34,6 +34,58 @@ a {
   color: #f7f2e8;
 }
 
+.landing-theme {
+  --landing-bg: #f7f2e8;
+  --landing-band: #ffffff;
+  --landing-soft: #edf0ee;
+  --landing-ink: #151716;
+  --landing-muted: rgba(21, 23, 22, 0.68);
+  --landing-primary: #151716;
+  --landing-primary-hover: #39483b;
+  --landing-accent: #bd6f3c;
+  --landing-accent-soft: rgba(189, 111, 60, 0.18);
+  --landing-success: #d8f1df;
+}
+
+.landing-theme-studio {
+  --landing-bg: #f6f1e8;
+  --landing-band: #ffffff;
+  --landing-soft: #edf0ee;
+  --landing-ink: #111312;
+  --landing-muted: rgba(17, 19, 18, 0.68);
+  --landing-primary: #101713;
+  --landing-primary-hover: #24352b;
+  --landing-accent: #b8ff5c;
+  --landing-accent-soft: rgba(184, 255, 92, 0.18);
+  --landing-success: #e6f8d6;
+}
+
+.landing-theme-clinic {
+  --landing-bg: #f4fbf9;
+  --landing-band: #ffffff;
+  --landing-soft: #e9f6f2;
+  --landing-ink: #12302e;
+  --landing-muted: rgba(18, 48, 46, 0.68);
+  --landing-primary: #0f4f4a;
+  --landing-primary-hover: #0b6b63;
+  --landing-accent: #b88955;
+  --landing-accent-soft: rgba(184, 137, 85, 0.18);
+  --landing-success: #d8f3ea;
+}
+
+.landing-theme-warm {
+  --landing-bg: #fff8ef;
+  --landing-band: #ffffff;
+  --landing-soft: #f7eadb;
+  --landing-ink: #251b14;
+  --landing-muted: rgba(37, 27, 20, 0.68);
+  --landing-primary: #4f3425;
+  --landing-primary-hover: #6b432d;
+  --landing-accent: #c66d3d;
+  --landing-accent-soft: rgba(198, 109, 61, 0.18);
+  --landing-success: #f5dfc9;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -1,5 +1,7 @@
 export type NicheKey =
   | "odontologia"
+  | "pediatra"
+  | "papa"
   | "psicologia"
   | "veterinaria"
   | "gimnasio"
@@ -24,10 +26,27 @@ export type HeroData = {
   secondaryCta: string;
   primaryHref?: string;
   secondaryHref?: string;
+  microcopy?: string;
   statusLabel?: string;
   previewItems?: string[];
   notificationTitle?: string;
   notificationText?: string;
+  visual?: {
+    mode?: "image" | "system";
+    imageSrc?: string;
+    imageAlt?: string;
+    trustBadge?: string;
+    appointmentEyebrow?: string;
+    appointmentTitle?: string;
+    appointmentMeta?: string[];
+    detailEyebrow?: string;
+    systemCards?: Array<{
+      eyebrow: string;
+      title: string;
+      description: string;
+      meta: string;
+    }>;
+  };
   stats: Array<{
     value: string;
     label: string;
@@ -50,6 +69,11 @@ export type PortfolioItem = {
   title: string;
   result: string;
   href?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  visualBadge?: string;
+  visualDetail?: string;
+  visualPosition?: string;
 };
 
 export type ProcessStep = {
@@ -115,4 +139,43 @@ export type BusinessBrand = {
   hours: string[];
   whatsappMessage: string;
   whatsappHref: string;
+};
+
+export type LandingSeo = {
+  title: string;
+  description: string;
+  siteName?: string;
+};
+
+export type LandingSectionHeadings = Partial<{
+  services: SectionCopy;
+  portfolio: SectionCopy;
+  process: SectionCopy;
+  pricing: SectionCopy;
+  testimonials: SectionCopy;
+  faq: SectionCopy;
+}>;
+
+export type LandingPageData = {
+  brand?: BusinessBrand;
+  seo?: LandingSeo;
+  theme?: "studio" | "clinic" | "warm";
+  hero: HeroData;
+  sectionHeadings?: LandingSectionHeadings;
+  services?: ServiceItem[];
+  portfolio?: PortfolioItem[];
+  process?: ProcessStep[];
+  pricing?: PricingPlan[];
+  testimonials?: TestimonialItem[];
+  faq?: FaqItem[];
+  location?: LocationData;
+  contact?: ContactData;
+  pricingCta?: {
+    href: string;
+    label: string;
+  };
+  floatingCta?: {
+    href: string;
+    label: string;
+  };
 };

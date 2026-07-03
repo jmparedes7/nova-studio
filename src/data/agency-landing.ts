@@ -1,189 +1,246 @@
-import type {
-  ContactData,
-  FaqItem,
-  HeroData,
-  PortfolioItem,
-  PricingPlan,
-  ProcessStep,
-  ServiceItem,
-} from "@/templates/types";
+import type { LandingPageData } from "@/templates/types";
 
-export const agencyLanding: {
-  hero: HeroData;
-  services: ServiceItem[];
-  portfolio: PortfolioItem[];
-  process: ProcessStep[];
-  pricing: PricingPlan[];
-  faq: FaqItem[];
-  contact: ContactData;
-} = {
+export const agencyLanding: LandingPageData = {
+  theme: "studio",
+  seo: {
+    title: "Nova Studio | Landings premium por rubro",
+    description:
+      "Landings premium por rubro, diseñadas para verse caras y convertir rápido.",
+    siteName: "Nova Studio",
+  },
   hero: {
     businessName: "Nova Studio",
-    eyebrow: "Landing pages premium para pequenos negocios",
-    title: "Convertimos negocios locales en marcas que generan consultas.",
+    demoLabel: "Sistema premium de landings",
+    eyebrow: "Landings por rubro. Diseño caro. Conversión rápida.",
+    title: "Tu negocio puede verse más profesional en 7 días.",
     description:
-      "Disenamos landing pages rapidas, modernas y enfocadas en conversion para profesionales y comercios que necesitan vender mejor sin perder semanas en desarrollo.",
+      "Creamos landings premium por nicho para que pequeños negocios parezcan más confiables, se entiendan rápido y reciban consultas con menos fricción.",
     primaryCta: "Quiero mi landing",
-    secondaryCta: "Ver paquetes",
+    secondaryCta: "Ver demos",
+    primaryHref: "#contacto",
+    secondaryHref: "#portfolio",
+    microcopy: "Primera versión en 7 días. Mobile first. CTA directo a WhatsApp.",
+    statusLabel: "Sistema activo",
+    previewItems: ["Odontología", "Pediatría", "Servicios"],
+    notificationTitle: "Nueva consulta",
+    notificationText: "Landing lista para captar oportunidades",
+    visual: {
+      mode: "system",
+      trustBadge: "Premium",
+      detailEyebrow: "Demos",
+      systemCards: [
+        {
+          eyebrow: "Nicho",
+          title: "Dirección visual por rubro",
+          description: "Cada landing se adapta al negocio, no a un molde genérico.",
+          meta: "Brand",
+        },
+        {
+          eyebrow: "Venta",
+          title: "Copy pensado para consultas",
+          description: "Mensaje claro, beneficios visibles y CTA sin vueltas.",
+          meta: "CTA",
+        },
+        {
+          eyebrow: "Entrega",
+          title: "Rápida sin parecer barata",
+          description: "Estructura reusable con acabado editorial premium.",
+          meta: "7 días",
+        },
+      ],
+    },
     stats: [
-      { value: "7 dias", label: "para una primera version" },
-      { value: "100%", label: "mobile first" },
-      { value: "SEO", label: "base incluida" },
+      { value: "7 días", label: "primera versión" },
+      { value: "Mobile", label: "first real" },
+      { value: "WhatsApp", label: "CTA listo" },
     ],
+  },
+  sectionHeadings: {
+    services: {
+      eyebrow: "Valor",
+      title:
+        "No hacemos webs genéricas. Diseñamos landings por rubro para generar consultas.",
+      description:
+        "La diferencia está en parecer específico, confiable y listo para atender antes de que el cliente escriba.",
+    },
+    portfolio: {
+      eyebrow: "Demos por nicho",
+      title: "Cada rubro necesita una primera impresión distinta.",
+      description:
+        "Usamos la misma base técnica, pero cambiamos estructura, tono visual, copy y CTA según el negocio.",
+    },
+    process: {
+      eyebrow: "Sistema",
+      title: "Un proceso claro para lanzar rápido sin perder calidad.",
+      description:
+        "Primero definimos cómo tiene que vender la landing. Después diseñamos, construimos y publicamos.",
+    },
+    pricing: {
+      eyebrow: "Paquetes",
+      title: "Tres formas simples de comprar una landing premium.",
+      description:
+        "Elegí según el nivel de estrategia, contenido y acompañamiento que necesite tu negocio.",
+    },
+    faq: {
+      eyebrow: "Dudas",
+      title: "Lo importante antes de empezar.",
+      description:
+        "La idea es comprar claridad, velocidad y una presencia que parezca de mayor nivel.",
+    },
   },
   services: [
     {
-      title: "Landing page premium",
+      title: "Dirección visual por nicho",
       description:
-        "Una pagina clara, veloz y profesional con estructura pensada para convertir visitas en consultas reales.",
+        "Odontología, salud, servicios o negocios locales no deberían verse igual. Definimos una estética propia para que el rubro se sienta premium.",
     },
     {
-      title: "Copywriting y propuesta",
+      title: "Copy orientado a conversión",
       description:
-        "Ordenamos el mensaje comercial para que el cliente entienda rapido que ofreces, por que confiar y como contactarte.",
+        "Ordenamos la oferta para que se entienda qué hacés, por qué confiar y cuál es el próximo paso para consultar.",
     },
     {
-      title: "WhatsApp y formularios",
+      title: "Mobile first real",
       description:
-        "Integramos llamados a la accion visibles, formularios simples y flujos preparados para captar oportunidades.",
+        "La landing se piensa para el teléfono desde el inicio: lectura rápida, CTAs visibles y secciones fáciles de escanear.",
     },
     {
-      title: "SEO tecnico basico",
+      title: "Entrega rápida sin parecer barata",
       description:
-        "Metadatos, jerarquia de contenido, rendimiento y estructura semantica para una base solida desde el inicio.",
-    },
-    {
-      title: "Templates por rubro",
-      description:
-        "Creamos bloques reutilizables para adaptar rapido paginas de odontologia, psicologia, veterinaria, gimnasios y servicios.",
-    },
-    {
-      title: "Mantenimiento mensual",
-      description:
-        "Actualizaciones, cambios menores, mejoras y soporte para que la pagina siga viva despues del lanzamiento.",
+        "Usamos un sistema reusable para acelerar producción, pero cuidando detalle visual, jerarquía y sensación premium.",
     },
   ],
   portfolio: [
     {
-      niche: "Odontologia",
-      title: "Clinica dental con foco en implantes",
-      result: "Agenda clara, beneficios visibles y CTA directo a WhatsApp.",
+      niche: "Demo conceptual",
+      title: "Clínica dental premium",
+      result:
+        "Tratamientos claros, confianza clínica y CTA preparado para coordinar consultas por WhatsApp.",
       href: "/templates/odontologia",
+      visualBadge: "Odontología",
+      visualDetail: "Ver demo",
     },
     {
-      niche: "Psicologia",
-      title: "Profesional independiente",
-      result: "Tono humano, confianza y formulario de primera consulta.",
+      niche: "Demo en preparación",
+      title: "Pediatría familiar",
+      result:
+        "Una landing cálida y confiable para familias que necesitan pedir turno sin fricción.",
+      href: "/demos/pediatra",
+      visualBadge: "Pediatría",
+      visualDetail: "Próxima",
     },
     {
-      niche: "Gimnasio",
-      title: "Estudio fitness boutique",
-      result: "Oferta de prueba, planes simples y energia visual premium.",
+      niche: "Demo en preparación",
+      title: "Servicios profesionales",
+      result:
+        "Oferta clara, autoridad visual y estructura pensada para recibir consultas calificadas.",
+      href: "/demos/papa",
+      visualBadge: "Servicios",
+      visualDetail: "Próxima",
     },
   ],
   process: [
     {
       step: "01",
-      title: "Diagnostico",
+      title: "Diagnóstico",
       description:
-        "Entendemos el negocio, el cliente ideal, la oferta y la accion principal que debe lograr la pagina.",
+        "Entendemos el rubro, la oferta, el cliente ideal y qué consulta tiene que generar la landing.",
     },
     {
       step: "02",
-      title: "Estructura y contenido",
+      title: "Estructura comercial",
       description:
-        "Definimos secciones, copy, prueba social y CTA antes de entrar al diseno visual.",
+        "Definimos el orden de secciones, promesa, prueba, objeciones y llamados a la acción.",
     },
     {
       step: "03",
-      title: "Diseno y desarrollo",
+      title: "Diseño premium",
       description:
-        "Construimos una landing mobile first con componentes reutilizables, animaciones sutiles y buena performance.",
+        "Aplicamos una dirección visual específica para que el negocio parezca más profesional y confiable.",
     },
     {
       step: "04",
-      title: "Publicacion y mejora",
+      title: "Publicación y mejora",
       description:
-        "Preparamos despliegue en Vercel, ajustes finales, SEO basico y plan de mantenimiento si aplica.",
+        "Publicamos, revisamos mobile, SEO base y dejamos la landing lista para captar consultas.",
     },
   ],
   pricing: [
     {
       name: "Base",
       price: "USD 250",
-      description: "Para validar presencia profesional rapido.",
+      description: "Para validar presencia profesional rápido.",
       features: [
         "Landing one-page",
-        "Diseno responsive",
-        "WhatsApp CTA",
-        "SEO basico",
+        "Diseño responsive",
+        "CTA a WhatsApp",
+        "SEO técnico base",
       ],
     },
     {
       name: "Premium",
       price: "USD 450",
-      description: "La opcion principal para negocios que quieren vender mejor.",
+      description: "La opción principal para negocios que quieren verse mejor y vender más claro.",
       highlighted: true,
       features: [
         "Landing premium completa",
-        "Copywriting inicial",
-        "Formulario de contacto",
-        "Secciones de prueba social",
-        "Animaciones suaves",
+        "Dirección visual por nicho",
+        "Copy inicial orientado a conversión",
+        "Formulario o WhatsApp CTA",
+        "Secciones de confianza y prueba social",
       ],
     },
     {
       name: "Growth",
       price: "USD 650+",
-      description: "Para negocios que necesitan mas contenido y optimizacion.",
+      description: "Para negocios que necesitan más contenido, variantes o acompañamiento.",
       features: [
         "Landing extendida",
-        "Variantes por campana",
+        "Variantes por campaña",
         "Integraciones adicionales",
-        "Mantenimiento mensual opcional",
+        "Mejoras mensuales opcionales",
       ],
     },
   ],
+  pricingCta: {
+    href: "#contacto",
+    label: "Pedir propuesta",
+  },
   faq: [
     {
-      question: "Cuanto tarda una landing page?",
+      question: "¿Esto es una web completa?",
       answer:
-        "Una primera version puede estar lista en aproximadamente una semana si el contenido y las decisiones principales estan claros.",
+        "No necesariamente. Es una landing enfocada en una oferta concreta, pensada para verse profesional y generar consultas rápido.",
     },
     {
-      question: "Sirve para cualquier rubro?",
+      question: "¿Sirve si todavía no tengo marca definida?",
       answer:
-        "La base es reutilizable, pero cada pagina se adapta al rubro, tono, oferta y tipo de cliente que necesita convertir.",
+        "Sí. Podemos partir de una dirección visual simple y premium para ordenar la primera impresión del negocio.",
     },
     {
-      question: "Incluye hosting y dominio?",
+      question: "¿Puedo usarla con dominio propio?",
       answer:
-        "Podemos orientar la configuracion con Vercel, dominio y Cloudflare. El costo del dominio o servicios externos se cobra aparte.",
-    },
-    {
-      question: "Puedo pedir cambios despues?",
-      answer:
-        "Si. La idea comercial es ofrecer mantenimiento mensual para cambios menores, mejoras y soporte continuo.",
+        "Sí. Podemos publicarla en Vercel y conectar un dominio propio cuando esté listo.",
     },
   ],
   contact: {
-    title: "Construyamos una landing que trabaje como vendedor digital.",
+    title: "Contame tu rubro y te devuelvo una dirección concreta.",
     description:
-      "Contanos tu rubro, tu oferta principal y que tipo de consultas queres recibir. Te respondemos con una recomendacion concreta.",
+      "Decime qué vendés, qué tipo de consultas querés recibir y qué estilo querés transmitir. Te respondo con una recomendación clara para tu landing.",
     email: "hola@novastudio.dev",
     whatsapp: "+54 9 11 0000-0000",
     whatsappHref:
-      "https://wa.me/5491100000000?text=Hola%20Nova%20Studio%2C%20quiero%20consultar%20por%20una%20landing%20page.",
+      "https://wa.me/5491100000000?text=Hola%20Nova%20Studio%2C%20quiero%20pedir%20una%20propuesta%20para%20una%20landing.",
     formLabels: {
       name: "Nombre",
       reason: "Rubro",
-      message: "Que necesitas",
+      message: "Qué necesitás",
     },
     formPlaceholders: {
       name: "Tu nombre",
-      reason: "Ej: odontologia",
-      message: "Contanos que vendes y que consultas queres recibir.",
+      reason: "Ej: odontología, pediatría, servicios",
+      message: "Contame qué vendés y qué consultas querés recibir.",
     },
-    submitLabel: "Enviar consulta",
+    submitLabel: "Pedir propuesta",
   },
 };
