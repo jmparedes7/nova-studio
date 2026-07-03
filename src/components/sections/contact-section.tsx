@@ -32,34 +32,34 @@ export function ContactSection({ data }: ContactSectionProps) {
             <form className="rounded-3xl bg-bone p-5 text-ink sm:p-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="text-sm font-semibold">
-                  Nombre
+                  {data.formLabels.name}
                   <input
                     className="mt-2 min-h-12 w-full rounded-2xl border border-ink/10 bg-white px-4 outline-none ring-copper/30 transition focus:ring-4"
                     name="name"
-                    placeholder="Tu nombre"
+                    placeholder={data.formPlaceholders.name}
                     type="text"
                   />
                 </label>
                 <label className="text-sm font-semibold">
-                  Rubro
+                  {data.formLabels.reason}
                   <input
                     className="mt-2 min-h-12 w-full rounded-2xl border border-ink/10 bg-white px-4 outline-none ring-copper/30 transition focus:ring-4"
-                    name="business"
-                    placeholder="Ej: odontologia"
+                    name="reason"
+                    placeholder={data.formPlaceholders.reason}
                     type="text"
                   />
                 </label>
               </div>
               <label className="mt-4 block text-sm font-semibold">
-                Que necesitas
+                {data.formLabels.message}
                 <textarea
                   className="mt-2 min-h-36 w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 outline-none ring-copper/30 transition focus:ring-4"
                   name="message"
-                  placeholder="Contanos que vendes y que consultas queres recibir."
+                  placeholder={data.formPlaceholders.message}
                 />
               </label>
-              <Button className="mt-5 w-full" href="mailto:hola@novastudio.dev">
-                Enviar consulta
+              <Button className="mt-5 w-full" href={data.whatsappHref}>
+                {data.submitLabel}
               </Button>
             </form>
           </FadeIn>

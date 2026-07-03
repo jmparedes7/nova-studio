@@ -1,20 +1,31 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { ProcessStep } from "@/templates/types";
+import type { ProcessStep, SectionCopy } from "@/templates/types";
 
 type ProcessSectionProps = {
   steps: ProcessStep[];
+  heading?: SectionCopy;
 };
 
-export function ProcessSection({ steps }: ProcessSectionProps) {
+const defaultHeading: SectionCopy = {
+  eyebrow: "Proceso",
+  title: "Un sistema claro para entregar rapido sin perder criterio.",
+  description:
+    "Primero definimos la venta. Despues disenamos y desarrollamos la pagina.",
+};
+
+export function ProcessSection({
+  steps,
+  heading = defaultHeading,
+}: ProcessSectionProps) {
   return (
     <section className="bg-ink py-20 text-bone sm:py-24" id="proceso">
       <Container>
         <SectionHeading
-          eyebrow="Proceso"
-          title="Un sistema claro para entregar rapido sin perder criterio."
-          description="Primero definimos la venta. Despues disenamos y desarrollamos la pagina."
+          eyebrow={heading.eyebrow}
+          title={heading.title}
+          description={heading.description}
           theme="dark"
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">

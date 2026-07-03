@@ -18,6 +18,7 @@ export const agencyLanding: {
   contact: ContactData;
 } = {
   hero: {
+    businessName: "Nova Studio",
     eyebrow: "Landing pages premium para pequenos negocios",
     title: "Convertimos negocios locales en marcas que generan consultas.",
     description:
@@ -171,5 +172,18 @@ export const agencyLanding: {
       "Contanos tu rubro, tu oferta principal y que tipo de consultas queres recibir. Te respondemos con una recomendacion concreta.",
     email: "hola@novastudio.dev",
     whatsapp: "+54 9 11 0000-0000",
+    whatsappHref:
+      "https://wa.me/5491100000000?text=Hola%20Nova%20Studio%2C%20quiero%20consultar%20por%20una%20landing%20page.",
+    formLabels: {
+      name: "Nombre",
+      reason: "Rubro",
+      message: "Que necesitas",
+    },
+    formPlaceholders: {
+      name: "Tu nombre",
+      reason: "Ej: odontologia",
+      message: "Contanos que vendes y que consultas queres recibir.",
+    },
+    submitLabel: "Enviar consulta",
   },
 };

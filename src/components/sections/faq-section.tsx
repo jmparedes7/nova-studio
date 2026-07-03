@@ -1,20 +1,28 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { FaqItem } from "@/templates/types";
+import type { FaqItem, SectionCopy } from "@/templates/types";
 
 type FaqSectionProps = {
   items: FaqItem[];
+  heading?: SectionCopy;
 };
 
-export function FaqSection({ items }: FaqSectionProps) {
+const defaultHeading: SectionCopy = {
+  eyebrow: "FAQ",
+  title: "Preguntas que conviene responder antes de vender.",
+  description:
+    "Una landing premium tambien reduce friccion comercial antes de la primera conversacion.",
+};
+
+export function FaqSection({ items, heading = defaultHeading }: FaqSectionProps) {
   return (
     <section className="py-20 sm:py-24" id="faq">
       <Container>
         <SectionHeading
-          eyebrow="FAQ"
-          title="Preguntas que conviene responder antes de vender."
-          description="Una landing premium tambien reduce friccion comercial antes de la primera conversacion."
+          eyebrow={heading.eyebrow}
+          title={heading.title}
+          description={heading.description}
         />
         <div className="mx-auto mt-12 max-w-4xl space-y-4">
           {items.map((item, index) => (

@@ -1,20 +1,31 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { PortfolioItem } from "@/templates/types";
+import type { PortfolioItem, SectionCopy } from "@/templates/types";
 
 type PortfolioSectionProps = {
   items: PortfolioItem[];
+  heading?: SectionCopy;
 };
 
-export function PortfolioSection({ items }: PortfolioSectionProps) {
+const defaultHeading: SectionCopy = {
+  eyebrow: "Portfolio",
+  title: "Casos modelo pensados para vender por rubro.",
+  description:
+    "Cada template parte de una estrategia de conversion distinta: no necesita lo mismo una clinica, un gimnasio o un profesional independiente.",
+};
+
+export function PortfolioSection({
+  items,
+  heading = defaultHeading,
+}: PortfolioSectionProps) {
   return (
     <section className="py-20 sm:py-24" id="portfolio">
       <Container>
         <SectionHeading
-          eyebrow="Portfolio"
-          title="Casos modelo pensados para vender por rubro."
-          description="Cada template parte de una estrategia de conversion distinta: no necesita lo mismo una clinica, un gimnasio o un profesional independiente."
+          eyebrow={heading.eyebrow}
+          title={heading.title}
+          description={heading.description}
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {items.map((item, index) => (
@@ -24,7 +35,7 @@ export function PortfolioSection({ items }: PortfolioSectionProps) {
               key={item.title}
             >
               <a
-                aria-label={`Ver template ${item.title}`}
+                aria-label={`Ver detalle: ${item.title}`}
                 className="block h-full"
                 href={item.href ?? "#contacto"}
               >

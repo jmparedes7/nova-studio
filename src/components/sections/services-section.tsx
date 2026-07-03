@@ -1,20 +1,31 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { ServiceItem } from "@/templates/types";
+import type { SectionCopy, ServiceItem } from "@/templates/types";
 
 type ServicesSectionProps = {
   items: ServiceItem[];
+  heading?: SectionCopy;
 };
 
-export function ServicesSection({ items }: ServicesSectionProps) {
+const defaultHeading: SectionCopy = {
+  eyebrow: "Servicios",
+  title: "Todo lo necesario para lanzar una presencia que convierte.",
+  description:
+    "La landing no es una pieza aislada: combina estrategia, diseno, desarrollo y captacion.",
+};
+
+export function ServicesSection({
+  items,
+  heading = defaultHeading,
+}: ServicesSectionProps) {
   return (
     <section className="bg-white py-20 sm:py-24" id="servicios">
       <Container>
         <SectionHeading
-          eyebrow="Servicios"
-          title="Todo lo necesario para lanzar una presencia que convierte."
-          description="La landing no es una pieza aislada: combina estrategia, diseno, desarrollo y captacion."
+          eyebrow={heading.eyebrow}
+          title={heading.title}
+          description={heading.description}
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item, index) => (

@@ -2,20 +2,35 @@ import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { PricingPlan } from "@/templates/types";
+import type { PricingPlan, SectionCopy } from "@/templates/types";
 
 type PricingSectionProps = {
   plans: PricingPlan[];
+  heading?: SectionCopy;
+  ctaHref?: string;
+  ctaLabel?: string;
 };
 
-export function PricingSection({ plans }: PricingSectionProps) {
+const defaultHeading: SectionCopy = {
+  eyebrow: "Precios",
+  title: "Paquetes simples para vender valor, no horas.",
+  description:
+    "Los precios son una base comercial inicial. Cada propuesta puede ajustarse segun urgencia, contenido, integraciones y mantenimiento.",
+};
+
+export function PricingSection({
+  plans,
+  heading = defaultHeading,
+  ctaHref = "#contacto",
+  ctaLabel = "Consultar",
+}: PricingSectionProps) {
   return (
     <section className="bg-white py-20 sm:py-24" id="precios">
       <Container>
         <SectionHeading
-          eyebrow="Precios"
-          title="Paquetes simples para vender valor, no horas."
-          description="Los precios son una base comercial inicial. Cada propuesta puede ajustarse segun urgencia, contenido, integraciones y mantenimiento."
+          eyebrow={heading.eyebrow}
+          title={heading.title}
+          description={heading.description}
         />
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {plans.map((plan, index) => (
@@ -66,10 +81,10 @@ export function PricingSection({ plans }: PricingSectionProps) {
               </ul>
               <Button
                 className="mt-8 w-full"
-                href="#contacto"
+                href={ctaHref}
                 variant={plan.highlighted ? "secondary" : "primary"}
               >
-                Consultar
+                {ctaLabel}
               </Button>
             </FadeIn>
           ))}

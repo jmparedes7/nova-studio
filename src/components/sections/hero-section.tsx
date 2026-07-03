@@ -13,7 +13,7 @@ export function HeroSection({ data }: HeroSectionProps) {
       <Container>
         <nav className="flex items-center justify-between py-4">
           <a className="text-lg font-bold tracking-tight text-ink" href="#">
-            Nova Studio
+            {data.businessName}
           </a>
           <a
             className="rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-copper"
@@ -69,7 +69,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                       <div className="mt-2 h-2 w-36 rounded-full bg-ink/12" />
                     </div>
                     <div className="rounded-full bg-mint px-3 py-1 text-xs font-semibold text-moss">
-                      Online
+                      {data.statusLabel ?? "Online"}
                     </div>
                   </div>
                   <div className="grid gap-3 py-5 sm:grid-cols-2">
@@ -79,7 +79,11 @@ export function HeroSection({ data }: HeroSectionProps) {
                       <div className="mt-2 h-2 w-1/2 rounded-full bg-ink/10" />
                     </div>
                     <div className="space-y-3">
-                      {["Hero", "Servicios", "Testimonios"].map((item) => (
+                      {(data.previewItems ?? [
+                        "Hero",
+                        "Servicios",
+                        "Testimonios",
+                      ]).map((item) => (
                         <div
                           className="rounded-2xl border border-ink/10 bg-white p-4"
                           key={item}
@@ -93,9 +97,11 @@ export function HeroSection({ data }: HeroSectionProps) {
                     </div>
                   </div>
                   <div className="rounded-2xl bg-ink p-4 text-bone">
-                    <p className="text-sm font-semibold">Consulta recibida</p>
+                    <p className="text-sm font-semibold">
+                      {data.notificationTitle ?? "Consulta recibida"}
+                    </p>
                     <p className="mt-1 text-xs text-bone/70">
-                      Nuevo lead desde WhatsApp CTA
+                      {data.notificationText ?? "Nuevo mensaje desde WhatsApp"}
                     </p>
                   </div>
                 </div>
