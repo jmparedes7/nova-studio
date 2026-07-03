@@ -67,6 +67,7 @@ export const agencyLanding: {
       niche: "Odontologia",
       title: "Clinica dental con foco en implantes",
       result: "Agenda clara, beneficios visibles y CTA directo a WhatsApp.",
+      href: "/templates/odontologia",
     },
     {
       niche: "Psicologia",

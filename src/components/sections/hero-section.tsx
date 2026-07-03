@@ -36,8 +36,10 @@ export function HeroSection({ data }: HeroSectionProps) {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="#contacto">{data.primaryCta}</Button>
-              <Button href="#precios" variant="secondary">
+              <Button href={data.primaryHref ?? "#contacto"}>
+                {data.primaryCta}
+              </Button>
+              <Button href={data.secondaryHref ?? "#precios"} variant="secondary">
                 {data.secondaryCta}
               </Button>
             </div>

@@ -23,15 +23,21 @@ export function PortfolioSection({ items }: PortfolioSectionProps) {
               delay={index * 0.06}
               key={item.title}
             >
-              <div className="h-48 bg-[linear-gradient(135deg,#151716_0%,#39483b_45%,#bd6f3c_100%)] p-5">
-                <span className="rounded-full bg-bone px-3 py-1 text-xs font-semibold text-ink">
-                  {item.niche}
-                </span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-ink">{item.title}</h3>
-                <p className="mt-3 leading-7 text-ink/68">{item.result}</p>
-              </div>
+              <a
+                aria-label={`Ver template ${item.title}`}
+                className="block h-full"
+                href={item.href ?? "#contacto"}
+              >
+                <div className="h-48 bg-[linear-gradient(135deg,#151716_0%,#39483b_45%,#bd6f3c_100%)] p-5">
+                  <span className="rounded-full bg-bone px-3 py-1 text-xs font-semibold text-ink">
+                    {item.niche}
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-ink">{item.title}</h3>
+                  <p className="mt-3 leading-7 text-ink/68">{item.result}</p>
+                </div>
+              </a>
             </FadeIn>
           ))}
         </div>

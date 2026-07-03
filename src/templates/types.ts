@@ -20,6 +20,8 @@ export type HeroData = {
   description: string;
   primaryCta: string;
   secondaryCta: string;
+  primaryHref?: string;
+  secondaryHref?: string;
   stats: Array<{
     value: string;
     label: string;
@@ -35,6 +37,7 @@ export type PortfolioItem = {
   niche: string;
   title: string;
   result: string;
+  href?: string;
 };
 
 export type ProcessStep = {

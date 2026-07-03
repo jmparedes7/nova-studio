@@ -53,3 +53,7 @@ npm run lint
 - Precios
 - FAQ
 - Contacto
+
+## Templates iniciales
+
+- `/templates/odontologia`
