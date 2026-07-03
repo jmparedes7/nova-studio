@@ -1,8 +1,8 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { LandingPageData, PricingPlan, SectionCopy } from "@/templates/types";
+import type { LandingPageData, PricingPlan, SectionCopy } from "@/landing-system/types";
 
 type PricingSectionProps = {
   plans: PricingPlan[];
@@ -108,3 +108,4 @@ export function PricingSection({
     </section>
   );
 }
+

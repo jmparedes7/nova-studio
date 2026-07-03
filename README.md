@@ -1,6 +1,10 @@
 # Nova Studio
 
-Base tecnica para una micro agencia de landing pages premium para pequenos negocios.
+Base tecnica para una micro agencia de landing pages premium semi-custom para pequenos negocios y profesionales.
+
+## Posicionamiento
+
+Nova Studio no vende plantillas. Crea landing pages semi-custom con un sistema propio: rapidas de entregar, pero disenadas para el negocio de cada cliente.
 
 ## Stack
 
@@ -12,15 +16,9 @@ Base tecnica para una micro agencia de landing pages premium para pequenos negoc
 
 ## Objetivo
 
-Crear un sistema reutilizable para construir landing pages rapidas, modernas y profesionales, con estructura preparada para templates por rubro.
+Crear un sistema reutilizable que permita construir landings distintas segun rubro, objetivo comercial, publico, personalidad del cliente, accion principal y estilo visual deseado.
 
-Rubros iniciales:
-
-- Odontologia
-- Psicologia
-- Veterinaria
-- Gimnasio
-- Servicios profesionales
+Reutilizar codigo no significa repetir diseno.
 
 ## Estructura
 
@@ -29,10 +27,10 @@ src/
   app/                  App Router de Next.js
   components/
     animation/          Componentes con Framer Motion
-    sections/           Secciones reutilizables de landing
+    sections/           Secciones reutilizables y configurables
     ui/                 Componentes base de interfaz
-  data/                 Contenido configurable
-  templates/            Tipos y blueprint para templates por rubro
+  data/                 Contenido y direccion comercial por demo
+  landing-system/       Tipos, metadata y blueprint del sistema modular
 ```
 
 ## Comandos
@@ -44,16 +42,10 @@ npm run build
 npm run lint
 ```
 
-## Secciones incluidas
+## Demos iniciales
 
-- Hero
-- Servicios
-- Portfolio
-- Proceso
-- Precios
-- FAQ
-- Contacto
+- `/demos/odontologia`
+- `/demos/pediatra`
+- `/demos/papa`
 
-## Templates iniciales
-
-- `/templates/odontologia`
+La ruta vieja `/templates/odontologia` redirige a `/demos/odontologia`.

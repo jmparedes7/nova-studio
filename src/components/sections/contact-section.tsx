@@ -1,7 +1,7 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import type { ContactData, LandingPageData } from "@/templates/types";
+import type { ContactData, LandingPageData } from "@/landing-system/types";
 
 type ContactSectionProps = {
   data: ContactData;
@@ -96,3 +96,4 @@ export function ContactSection({ data, theme = "studio" }: ContactSectionProps) 
     </section>
   );
 }
+

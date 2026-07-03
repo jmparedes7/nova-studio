@@ -1,7 +1,7 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { LandingPageData, ProcessStep, SectionCopy } from "@/templates/types";
+import type { LandingPageData, ProcessStep, SectionCopy } from "@/landing-system/types";
 
 type ProcessSectionProps = {
   steps: ProcessStep[];
@@ -11,9 +11,9 @@ type ProcessSectionProps = {
 
 const defaultHeading: SectionCopy = {
   eyebrow: "Proceso",
-  title: "Un sistema claro para entregar rápido sin perder criterio.",
+  title: "Un sistema claro para entregar rÃ¡pido sin perder criterio.",
   description:
-    "Primero definimos la venta. Después diseñamos y desarrollamos la página.",
+    "Primero definimos la venta. DespuÃ©s diseÃ±amos y desarrollamos la pÃ¡gina.",
 };
 
 export function ProcessSection({
@@ -66,3 +66,4 @@ export function ProcessSection({
     </section>
   );
 }
+

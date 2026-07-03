@@ -1,7 +1,7 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { LandingPageData, PortfolioItem, SectionCopy } from "@/templates/types";
+import type { LandingPageData, PortfolioItem, SectionCopy } from "@/landing-system/types";
 import Image from "next/image";
 
 type PortfolioSectionProps = {
@@ -12,12 +12,12 @@ type PortfolioSectionProps = {
 
 const clinicalVisuals = [
   {
-    badge: "Evaluación",
-    detail: "Diagnóstico claro",
+    badge: "EvaluaciÃ³n",
+    detail: "DiagnÃ³stico claro",
     position: "50% 42%",
   },
   {
-    badge: "Tecnología",
+    badge: "TecnologÃ­a",
     detail: "Plan digital",
     position: "58% 46%",
   },
@@ -29,10 +29,10 @@ const clinicalVisuals = [
 ];
 
 const defaultHeading: SectionCopy = {
-  eyebrow: "Portfolio",
-  title: "Casos modelo pensados para vender por rubro.",
+  eyebrow: "Demos",
+  title: "Demos comerciales pensadas para contextos distintos.",
   description:
-    "Cada template parte de una estrategia de conversión distinta: no necesita lo mismo una clínica, un gimnasio o un profesional independiente.",
+    "Cada landing parte de una estrategia distinta: no necesita lo mismo una clinica, un gimnasio o un profesional independiente.",
 };
 
 export function PortfolioSection({
@@ -139,3 +139,4 @@ export function PortfolioSection({
     </section>
   );
 }
+

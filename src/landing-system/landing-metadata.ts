@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { LandingPageData } from "@/templates/types";
+import type { LandingPageData } from "@/landing-system/types";
 
 export function createLandingMetadata(data: LandingPageData): Metadata {
   return {

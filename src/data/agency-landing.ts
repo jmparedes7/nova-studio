@@ -1,27 +1,36 @@
-import type { LandingPageData } from "@/templates/types";
+﻿import type { LandingPageData } from "@/landing-system/types";
 
 export const agencyLanding: LandingPageData = {
   theme: "studio",
+  sections: [
+    { type: "hero", variant: "agency-bold" },
+    { type: "problem", variant: "pain-solution" },
+    { type: "services", variant: "conversion-grid" },
+    { type: "portfolio", variant: "demo-showcase" },
+    { type: "process", variant: "timeline" },
+    { type: "pricing", variant: "offer-cards" },
+    { type: "contact", variant: "lead-form" },
+  ],
   seo: {
     title: "Nova Studio | Landings premium por rubro",
     description:
-      "Landings premium por rubro, diseñadas para verse caras y convertir rápido.",
+      "Landings premium por rubro, diseÃ±adas para verse caras y convertir rÃ¡pido.",
     siteName: "Nova Studio",
   },
   hero: {
     businessName: "Nova Studio",
     demoLabel: "Sistema premium de landings",
-    eyebrow: "Landings por rubro. Diseño caro. Conversión rápida.",
-    title: "Tu negocio puede verse más profesional en 7 días.",
+    eyebrow: "Landings por rubro. DiseÃ±o caro. ConversiÃ³n rÃ¡pida.",
+    title: "Tu negocio puede verse mÃ¡s profesional en 7 dÃ­as.",
     description:
-      "Creamos landings premium por nicho para que pequeños negocios parezcan más confiables, se entiendan rápido y reciban consultas con menos fricción.",
+      "Creamos landings premium por nicho para que pequeÃ±os negocios parezcan mÃ¡s confiables, se entiendan rÃ¡pido y reciban consultas con menos fricciÃ³n.",
     primaryCta: "Quiero mi landing",
     secondaryCta: "Ver demos",
     primaryHref: "#contacto",
     secondaryHref: "#portfolio",
-    microcopy: "Primera versión en 7 días. Mobile first. CTA directo a WhatsApp.",
+    microcopy: "Primera versiÃ³n en 7 dÃ­as. Mobile first. CTA directo a WhatsApp.",
     statusLabel: "Sistema activo",
-    previewItems: ["Odontología", "Pediatría", "Servicios"],
+    previewItems: ["OdontologÃ­a", "PediatrÃ­a", "Servicios"],
     notificationTitle: "Nueva consulta",
     notificationText: "Landing lista para captar oportunidades",
     visual: {
@@ -31,8 +40,8 @@ export const agencyLanding: LandingPageData = {
       systemCards: [
         {
           eyebrow: "Nicho",
-          title: "Dirección visual por rubro",
-          description: "Cada landing se adapta al negocio, no a un molde genérico.",
+          title: "DirecciÃ³n visual por rubro",
+          description: "Cada landing se adapta al negocio, no a un molde genÃ©rico.",
           meta: "Brand",
         },
         {
@@ -43,43 +52,49 @@ export const agencyLanding: LandingPageData = {
         },
         {
           eyebrow: "Entrega",
-          title: "Rápida sin parecer barata",
+          title: "RÃ¡pida sin parecer barata",
           description: "Estructura reusable con acabado editorial premium.",
-          meta: "7 días",
+          meta: "7 dÃ­as",
         },
       ],
     },
     stats: [
-      { value: "7 días", label: "primera versión" },
+      { value: "7 dÃ­as", label: "primera versiÃ³n" },
       { value: "Mobile", label: "first real" },
       { value: "WhatsApp", label: "CTA listo" },
     ],
   },
   sectionHeadings: {
+    problem: {
+      eyebrow: "Problema / solución",
+      title: "El problema no es tener una web. Es parecer uno más.",
+      description:
+        "Nova separa estrategia, estética y conversión para que cada landing se sienta diseñada para un rubro concreto.",
+    },
     services: {
       eyebrow: "Valor",
       title:
-        "No hacemos webs genéricas. Diseñamos landings por rubro para generar consultas.",
+        "No hacemos webs genÃ©ricas. DiseÃ±amos landings por rubro para generar consultas.",
       description:
-        "La diferencia está en parecer específico, confiable y listo para atender antes de que el cliente escriba.",
+        "La diferencia estÃ¡ en parecer especÃ­fico, confiable y listo para atender antes de que el cliente escriba.",
     },
     portfolio: {
       eyebrow: "Demos por nicho",
-      title: "Cada rubro necesita una primera impresión distinta.",
+      title: "Cada rubro necesita una primera impresiÃ³n distinta.",
       description:
-        "Usamos la misma base técnica, pero cambiamos estructura, tono visual, copy y CTA según el negocio.",
+        "Usamos la misma base tÃ©cnica, pero cambiamos estructura, tono visual, copy y CTA segÃºn el negocio.",
     },
     process: {
       eyebrow: "Sistema",
-      title: "Un proceso claro para lanzar rápido sin perder calidad.",
+      title: "Un proceso claro para lanzar rÃ¡pido sin perder calidad.",
       description:
-        "Primero definimos cómo tiene que vender la landing. Después diseñamos, construimos y publicamos.",
+        "Primero definimos cÃ³mo tiene que vender la landing. DespuÃ©s diseÃ±amos, construimos y publicamos.",
     },
     pricing: {
       eyebrow: "Paquetes",
       title: "Tres formas simples de comprar una landing premium.",
       description:
-        "Elegí según el nivel de estrategia, contenido y acompañamiento que necesite tu negocio.",
+        "ElegÃ­ segÃºn el nivel de estrategia, contenido y acompaÃ±amiento que necesite tu negocio.",
     },
     faq: {
       eyebrow: "Dudas",
@@ -88,79 +103,93 @@ export const agencyLanding: LandingPageData = {
         "La idea es comprar claridad, velocidad y una presencia que parezca de mayor nivel.",
     },
   },
-  services: [
+  problem: [
     {
-      title: "Dirección visual por nicho",
+      label: "Problema",
+      title: "Una web prolija no alcanza si parece genérica.",
       description:
-        "Odontología, salud, servicios o negocios locales no deberían verse igual. Definimos una estética propia para que el rubro se sienta premium.",
+        "El visitante decide rápido si confía, entiende la oferta y tiene ganas de escribir.",
     },
     {
-      title: "Copy orientado a conversión",
+      label: "Solución",
+      title: "Una landing por rubro, con dirección visual y mensaje comercial.",
       description:
-        "Ordenamos la oferta para que se entienda qué hacés, por qué confiar y cuál es el próximo paso para consultar.",
+        "Nova ordena estética, copy, estructura y CTA para que el negocio parezca más profesional desde el primer scroll.",
+    },
+  ],
+  services: [
+    {
+      title: "DirecciÃ³n visual por nicho",
+      description:
+        "OdontologÃ­a, salud, servicios o negocios locales no deberÃ­an verse igual. Definimos una estÃ©tica propia para que el rubro se sienta premium.",
+    },
+    {
+      title: "Copy orientado a conversiÃ³n",
+      description:
+        "Ordenamos la oferta para que se entienda quÃ© hacÃ©s, por quÃ© confiar y cuÃ¡l es el prÃ³ximo paso para consultar.",
     },
     {
       title: "Mobile first real",
       description:
-        "La landing se piensa para el teléfono desde el inicio: lectura rápida, CTAs visibles y secciones fáciles de escanear.",
+        "La landing se piensa para el telÃ©fono desde el inicio: lectura rÃ¡pida, CTAs visibles y secciones fÃ¡ciles de escanear.",
     },
     {
-      title: "Entrega rápida sin parecer barata",
+      title: "Entrega rÃ¡pida sin parecer barata",
       description:
-        "Usamos un sistema reusable para acelerar producción, pero cuidando detalle visual, jerarquía y sensación premium.",
+        "Usamos un sistema reusable para acelerar producciÃ³n, pero cuidando detalle visual, jerarquÃ­a y sensaciÃ³n premium.",
     },
   ],
   portfolio: [
     {
       niche: "Demo conceptual",
-      title: "Clínica dental premium",
+      title: "ClÃ­nica dental premium",
       result:
-        "Tratamientos claros, confianza clínica y CTA preparado para coordinar consultas por WhatsApp.",
+        "Tratamientos claros, confianza clÃ­nica y CTA preparado para coordinar consultas por WhatsApp.",
       href: "/templates/odontologia",
-      visualBadge: "Odontología",
+      visualBadge: "OdontologÃ­a",
       visualDetail: "Ver demo",
     },
     {
-      niche: "Demo en preparación",
-      title: "Pediatría familiar",
+      niche: "Demo en preparaciÃ³n",
+      title: "PediatrÃ­a familiar",
       result:
-        "Una landing cálida y confiable para familias que necesitan pedir turno sin fricción.",
+        "Una landing cÃ¡lida y confiable para familias que necesitan pedir turno sin fricciÃ³n.",
       href: "/demos/pediatra",
-      visualBadge: "Pediatría",
-      visualDetail: "Próxima",
+      visualBadge: "PediatrÃ­a",
+      visualDetail: "PrÃ³xima",
     },
     {
-      niche: "Demo en preparación",
+      niche: "Demo en preparaciÃ³n",
       title: "Servicios profesionales",
       result:
         "Oferta clara, autoridad visual y estructura pensada para recibir consultas calificadas.",
       href: "/demos/papa",
       visualBadge: "Servicios",
-      visualDetail: "Próxima",
+      visualDetail: "PrÃ³xima",
     },
   ],
   process: [
     {
       step: "01",
-      title: "Diagnóstico",
+      title: "DiagnÃ³stico",
       description:
-        "Entendemos el rubro, la oferta, el cliente ideal y qué consulta tiene que generar la landing.",
+        "Entendemos el rubro, la oferta, el cliente ideal y quÃ© consulta tiene que generar la landing.",
     },
     {
       step: "02",
       title: "Estructura comercial",
       description:
-        "Definimos el orden de secciones, promesa, prueba, objeciones y llamados a la acción.",
+        "Definimos el orden de secciones, promesa, prueba, objeciones y llamados a la acciÃ³n.",
     },
     {
       step: "03",
-      title: "Diseño premium",
+      title: "DiseÃ±o premium",
       description:
-        "Aplicamos una dirección visual específica para que el negocio parezca más profesional y confiable.",
+        "Aplicamos una direcciÃ³n visual especÃ­fica para que el negocio parezca mÃ¡s profesional y confiable.",
     },
     {
       step: "04",
-      title: "Publicación y mejora",
+      title: "PublicaciÃ³n y mejora",
       description:
         "Publicamos, revisamos mobile, SEO base y dejamos la landing lista para captar consultas.",
     },
@@ -169,24 +198,24 @@ export const agencyLanding: LandingPageData = {
     {
       name: "Base",
       price: "USD 250",
-      description: "Para validar presencia profesional rápido.",
+      description: "Para validar presencia profesional rÃ¡pido.",
       features: [
         "Landing one-page",
-        "Diseño responsive",
+        "DiseÃ±o responsive",
         "CTA a WhatsApp",
-        "SEO técnico base",
+        "SEO tÃ©cnico base",
       ],
     },
     {
       name: "Premium",
       price: "USD 450",
       description:
-        "La opción principal para negocios que quieren verse mejor y vender más claro.",
+        "La opciÃ³n principal para negocios que quieren verse mejor y vender mÃ¡s claro.",
       highlighted: true,
       features: [
         "Landing premium completa",
-        "Dirección visual por nicho",
-        "Copy inicial orientado a conversión",
+        "DirecciÃ³n visual por nicho",
+        "Copy inicial orientado a conversiÃ³n",
         "Formulario o WhatsApp CTA",
         "Secciones de confianza y prueba social",
       ],
@@ -195,10 +224,10 @@ export const agencyLanding: LandingPageData = {
       name: "Growth",
       price: "USD 650+",
       description:
-        "Para negocios que necesitan más contenido, variantes o acompañamiento.",
+        "Para negocios que necesitan mÃ¡s contenido, variantes o acompaÃ±amiento.",
       features: [
         "Landing extendida",
-        "Variantes por campaña",
+        "Variantes por campaÃ±a",
         "Integraciones adicionales",
         "Mejoras mensuales opcionales",
       ],
@@ -210,25 +239,25 @@ export const agencyLanding: LandingPageData = {
   },
   faq: [
     {
-      question: "¿Esto es una web completa?",
+      question: "Â¿Esto es una web completa?",
       answer:
-        "No necesariamente. Es una landing enfocada en una oferta concreta, pensada para verse profesional y generar consultas rápido.",
+        "No necesariamente. Es una landing enfocada en una oferta concreta, pensada para verse profesional y generar consultas rÃ¡pido.",
     },
     {
-      question: "¿Sirve si todavía no tengo marca definida?",
+      question: "Â¿Sirve si todavÃ­a no tengo marca definida?",
       answer:
-        "Sí. Podemos partir de una dirección visual simple y premium para ordenar la primera impresión del negocio.",
+        "SÃ­. Podemos partir de una direcciÃ³n visual simple y premium para ordenar la primera impresiÃ³n del negocio.",
     },
     {
-      question: "¿Puedo usarla con dominio propio?",
+      question: "Â¿Puedo usarla con dominio propio?",
       answer:
-        "Sí. Podemos publicarla en Vercel y conectar un dominio propio cuando esté listo.",
+        "SÃ­. Podemos publicarla en Vercel y conectar un dominio propio cuando estÃ© listo.",
     },
   ],
   contact: {
-    title: "Contame tu rubro y te devuelvo una dirección concreta.",
+    title: "Contame tu rubro y te devuelvo una direcciÃ³n concreta.",
     description:
-      "Decime qué vendés, qué tipo de consultas querés recibir y qué estilo querés transmitir. Te respondo con una recomendación clara para tu landing.",
+      "Decime quÃ© vendÃ©s, quÃ© tipo de consultas querÃ©s recibir y quÃ© estilo querÃ©s transmitir. Te respondo con una recomendaciÃ³n clara para tu landing.",
     email: "hola@novastudio.dev",
     whatsapp: "+54 9 11 0000-0000",
     whatsappHref:
@@ -236,13 +265,14 @@ export const agencyLanding: LandingPageData = {
     formLabels: {
       name: "Nombre",
       reason: "Rubro",
-      message: "Qué necesitás",
+      message: "QuÃ© necesitÃ¡s",
     },
     formPlaceholders: {
       name: "Tu nombre",
-      reason: "Ej: odontología, pediatría, servicios",
-      message: "Contame qué vendés y qué consultas querés recibir.",
+      reason: "Ej: odontologÃ­a, pediatrÃ­a, servicios",
+      message: "Contame quÃ© vendÃ©s y quÃ© consultas querÃ©s recibir.",
     },
     submitLabel: "Pedir propuesta",
   },
 };
+

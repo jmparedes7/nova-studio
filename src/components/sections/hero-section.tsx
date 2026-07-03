@@ -1,7 +1,7 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import type { HeroData, LandingPageData } from "@/templates/types";
+import type { HeroData, LandingPageData } from "@/landing-system/types";
 import Image from "next/image";
 
 type HeroSectionProps = {
@@ -31,7 +31,7 @@ export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
         { label: "Tratamientos", href: "#servicios" },
         { label: "Proceso", href: "#proceso" },
         { label: "Testimonios", href: "#testimonios" },
-        { label: "Ubicación", href: "#ubicacion" },
+        { label: "UbicaciÃ³n", href: "#ubicacion" },
       ]
     : [
         { label: "Servicios", href: "#servicios" },
@@ -194,14 +194,14 @@ export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
                         </p>
                       </div>
                       <span className="rounded-full bg-[#B8FF5C] px-3 py-1 text-xs font-black text-[#101713]">
-                        7 días
+                        7 dÃ­as
                       </span>
                     </div>
                     <div className="grid gap-3 py-4 sm:grid-cols-[1fr_0.82fr]">
                       <div className="rounded-3xl bg-[#F6F1E8] p-4 text-[#111312]">
                         <div className="flex items-center justify-between gap-3">
                           <span className="rounded-full bg-[#101713] px-3 py-1 text-xs font-bold text-[#F6F1E8]">
-                            Odontología
+                            OdontologÃ­a
                           </span>
                           <span className="text-xs font-bold text-[#BD6F3C]">
                             WhatsApp CTA
@@ -254,7 +254,7 @@ export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
                 <>
                   {isClinic ? (
                     <div className="absolute -right-5 top-10 hidden rounded-full border border-[#d7ece6] bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0f4f4a] shadow-[0_12px_34px_rgba(15,79,74,0.08)] sm:block">
-                      Atención coordinada
+                      AtenciÃ³n coordinada
                     </div>
                   ) : (
                     <div className="absolute -left-4 top-8 hidden h-24 w-24 rounded-full border border-[var(--landing-accent-soft)] bg-white/35 backdrop-blur sm:block" />
@@ -353,7 +353,7 @@ export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
                       <div className="absolute bottom-4 left-4 right-4 grid gap-3 sm:bottom-5 sm:left-5 sm:right-auto sm:w-[78%] sm:grid-cols-[1fr_0.78fr]">
                         <div className="rounded-3xl bg-white/92 p-4 text-ink shadow-[0_18px_50px_rgba(21,23,22,0.18)] backdrop-blur">
                           <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--landing-accent)]">
-                            {visual.appointmentEyebrow ?? "Próximo paso"}
+                            {visual.appointmentEyebrow ?? "PrÃ³ximo paso"}
                           </p>
                           <p className="mt-2 text-lg font-bold leading-6">
                             {visual.appointmentTitle ?? data.notificationTitle}
@@ -405,3 +405,4 @@ export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
     </section>
   );
 }
+

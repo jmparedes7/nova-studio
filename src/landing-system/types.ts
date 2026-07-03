@@ -7,7 +7,7 @@ export type NicheKey =
   | "gimnasio"
   | "servicios-profesionales";
 
-export type TemplateNiche = {
+export type BusinessNiche = {
   key: NicheKey;
   name: string;
   audience: string;
@@ -57,6 +57,12 @@ export type SectionCopy = {
   eyebrow: string;
   title: string;
   description?: string;
+};
+
+export type ProblemItem = {
+  label: string;
+  title: string;
+  description: string;
 };
 
 export type ServiceItem = {
@@ -148,20 +154,61 @@ export type LandingSeo = {
 };
 
 export type LandingSectionHeadings = Partial<{
+  problem: SectionCopy;
   services: SectionCopy;
   portfolio: SectionCopy;
+  trust: SectionCopy;
   process: SectionCopy;
   pricing: SectionCopy;
   testimonials: SectionCopy;
   faq: SectionCopy;
 }>;
 
+export type LandingSectionType =
+  | "hero"
+  | "problem"
+  | "services"
+  | "portfolio"
+  | "trust"
+  | "process"
+  | "pricing"
+  | "testimonials"
+  | "faq"
+  | "location"
+  | "contact";
+
+export type LandingSectionVariant =
+  | "agency-bold"
+  | "pain-solution"
+  | "conversion-grid"
+  | "demo-showcase"
+  | "timeline"
+  | "offer-cards"
+  | "lead-form"
+  | "clinic-appointment"
+  | "treatment-cards"
+  | "medical-trust"
+  | "guided-steps"
+  | "patient-cards"
+  | "map-with-hours"
+  | "whatsapp-first"
+  | "standard";
+
+export type LandingSectionConfig = {
+  type: LandingSectionType;
+  variant?: LandingSectionVariant;
+  id?: string;
+  enabled?: boolean;
+};
+
 export type LandingPageData = {
   brand?: BusinessBrand;
   seo?: LandingSeo;
   theme?: "studio" | "clinic" | "warm";
+  sections?: LandingSectionConfig[];
   hero: HeroData;
   sectionHeadings?: LandingSectionHeadings;
+  problem?: ProblemItem[];
   services?: ServiceItem[];
   portfolio?: PortfolioItem[];
   process?: ProcessStep[];

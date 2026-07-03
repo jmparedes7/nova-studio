@@ -1,7 +1,7 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { LandingPageData, SectionCopy, TestimonialItem } from "@/templates/types";
+import type { LandingPageData, SectionCopy, TestimonialItem } from "@/landing-system/types";
 
 type TestimonialsSectionProps = {
   heading: SectionCopy;
@@ -52,3 +52,4 @@ export function TestimonialsSection({
     </section>
   );
 }
+

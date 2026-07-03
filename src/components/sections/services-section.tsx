@@ -1,7 +1,7 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { LandingPageData, SectionCopy, ServiceItem } from "@/templates/types";
+import type { LandingPageData, SectionCopy, ServiceItem } from "@/landing-system/types";
 
 type ServicesSectionProps = {
   items: ServiceItem[];
@@ -13,7 +13,7 @@ const defaultHeading: SectionCopy = {
   eyebrow: "Servicios",
   title: "Todo lo necesario para lanzar una presencia que convierte.",
   description:
-    "La landing no es una pieza aislada: combina estrategia, diseño, desarrollo y captación.",
+    "La landing no es una pieza aislada: combina estrategia, diseÃ±o, desarrollo y captaciÃ³n.",
 };
 
 export function ServicesSection({
@@ -86,3 +86,4 @@ export function ServicesSection({
     </section>
   );
 }
+

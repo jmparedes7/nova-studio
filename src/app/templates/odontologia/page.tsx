@@ -1,9 +1,5 @@
-import { LandingPage } from "@/components/landing-page";
-import { odontologiaLanding } from "@/data/odontologia-landing";
-import { createLandingMetadata } from "@/templates/landing-metadata";
+import { redirect } from "next/navigation";
 
-export const metadata = createLandingMetadata(odontologiaLanding);
-
-export default function OdontologiaTemplatePage() {
-  return <LandingPage data={odontologiaLanding} />;
+export default function LegacyOdontologiaRedirectPage() {
+  redirect("/demos/odontologia");
 }

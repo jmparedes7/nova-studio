@@ -1,4 +1,4 @@
-import type { LandingPageData } from "@/templates/types";
+﻿import type { LandingPageData } from "@/landing-system/types";
 
 export const papaLanding: LandingPageData = {
   seo: {
@@ -9,16 +9,16 @@ export const papaLanding: LandingPageData = {
   },
   hero: {
     businessName: "Demo Familiar",
-    demoLabel: "Demo en preparación",
+    demoLabel: "Demo en preparaciÃ³n",
     eyebrow: "Landing familiar",
-    title: "Una base lista para una landing cálida, clara y personal.",
+    title: "Una base lista para una landing cÃ¡lida, clara y personal.",
     description:
       "Esta ruta queda preparada para evolucionar desde data propia, assets propios y secciones compartidas del sistema Nova Studio.",
-    primaryCta: "Próximamente",
+    primaryCta: "PrÃ³ximamente",
     secondaryCta: "Volver a Nova Studio",
     primaryHref: "#",
     secondaryHref: "/",
-    microcopy: "Stub técnico: falta completar contenido comercial y assets.",
+    microcopy: "Stub tÃ©cnico: falta completar contenido comercial y assets.",
     stats: [
       { value: "Data", label: "configurable" },
       { value: "Ruta", label: "lista" },
@@ -26,3 +26,4 @@ export const papaLanding: LandingPageData = {
     ],
   },
 };
+

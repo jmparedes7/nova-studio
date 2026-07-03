@@ -1,20 +1,20 @@
-import type { BusinessBrand, LandingPageData } from "@/templates/types";
+﻿import type { BusinessBrand, LandingPageData } from "@/landing-system/types";
 
 const whatsappMessage =
-  "Hola Clínica Dental Nova, quiero solicitar una primera evaluación odontológica.";
+  "Hola ClÃ­nica Dental Nova, quiero solicitar una primera evaluaciÃ³n odontolÃ³gica.";
 const whatsappHref = "#contacto";
 
 const hours = [
   "Lunes a viernes de 9:00 a 19:00",
-  "Sábados de 9:00 a 13:00",
-  "Urgencias con coordinación previa",
+  "SÃ¡bados de 9:00 a 13:00",
+  "Urgencias con coordinaciÃ³n previa",
 ];
 
 export const dentalNovaBrand: BusinessBrand = {
-  businessName: "Clínica Dental Nova",
-  industry: "Odontología integral",
+  businessName: "ClÃ­nica Dental Nova",
+  industry: "OdontologÃ­a integral",
   location: "Av. Santa Fe 2842, Palermo, CABA",
-  whatsapp: "WhatsApp demo: pendiente de conectar al número real",
+  whatsapp: "WhatsApp demo: pendiente de conectar al nÃºmero real",
   email: "Demo conceptual de Nova Studio",
   hours,
   whatsappMessage,
@@ -24,19 +24,28 @@ export const dentalNovaBrand: BusinessBrand = {
 export const odontologiaLanding: LandingPageData = {
   brand: dentalNovaBrand,
   theme: "clinic",
+  sections: [
+    { type: "hero", variant: "clinic-appointment" },
+    { type: "services", variant: "treatment-cards" },
+    { type: "trust", variant: "medical-trust" },
+    { type: "process", variant: "guided-steps" },
+    { type: "testimonials", variant: "patient-cards" },
+    { type: "location", variant: "map-with-hours" },
+    { type: "contact", variant: "whatsapp-first" },
+  ],
   seo: {
     title: "Demo conceptual dental | Nova Studio",
     description:
-      "Demo conceptual de una landing premium para una clínica dental. No corresponde a un cliente real de Nova Studio.",
+      "Demo conceptual de una landing premium para una clÃ­nica dental. No corresponde a un cliente real de Nova Studio.",
     siteName: "Nova Studio",
   },
   hero: {
     businessName: dentalNovaBrand.businessName,
     demoLabel: "Demo conceptual de Nova Studio",
-    eyebrow: "Odontología integral en Palermo, CABA",
-    title: "Cuidamos tu sonrisa con tecnología, calidez y criterio clínico.",
+    eyebrow: "OdontologÃ­a integral en Palermo, CABA",
+    title: "Cuidamos tu sonrisa con tecnologÃ­a, calidez y criterio clÃ­nico.",
     description:
-      "Una experiencia modelo para una clínica dental moderna: tratamientos claros, primera evaluación guiada y un recorrido pensado para que el paciente sepa qué hacer desde el primer mensaje.",
+      "Una experiencia modelo para una clÃ­nica dental moderna: tratamientos claros, primera evaluaciÃ³n guiada y un recorrido pensado para que el paciente sepa quÃ© hacer desde el primer mensaje.",
     primaryCta: "Simular consulta",
     secondaryCta: "Ver tratamientos",
     primaryHref: dentalNovaBrand.whatsappHref,
@@ -44,17 +53,17 @@ export const odontologiaLanding: LandingPageData = {
     statusLabel: "Turnos demo",
     previewItems: ["Implantes", "Ortodoncia", "Urgencias"],
     notificationTitle: "Consulta recibida",
-    notificationText: "Primera evaluación coordinada",
+    notificationText: "Primera evaluaciÃ³n coordinada",
     microcopy:
-      "Demo conceptual: el WhatsApp se conecta al número real al publicar para un cliente.",
+      "Demo conceptual: el WhatsApp se conecta al nÃºmero real al publicar para un cliente.",
     visual: {
       imageSrc: "/odontologia/hero.png",
       imageAlt:
         "Dentista conversando con una paciente en un consultorio moderno",
       trustBadge: "Demo",
-      appointmentEyebrow: "Próximo paso",
-      appointmentTitle: "Evaluación inicial",
-      appointmentMeta: ["Palermo", "24 hs hábiles"],
+      appointmentEyebrow: "PrÃ³ximo paso",
+      appointmentTitle: "EvaluaciÃ³n inicial",
+      appointmentMeta: ["Palermo", "24 hs hÃ¡biles"],
       detailEyebrow: "Tratamientos",
     },
     stats: [
@@ -66,99 +75,105 @@ export const odontologiaLanding: LandingPageData = {
   sectionHeadings: {
     services: {
       eyebrow: "Tratamientos",
-      title: "Odontología integral para cada etapa de tu sonrisa.",
+      title: "OdontologÃ­a integral para cada etapa de tu sonrisa.",
       description:
-        "Atención profesional para resolver urgencias, planificar tratamientos y mantener tu salud bucal con seguimiento cercano.",
+        "AtenciÃ³n profesional para resolver urgencias, planificar tratamientos y mantener tu salud bucal con seguimiento cercano.",
     },
     portfolio: {
       eyebrow: "Experiencia",
-      title: "Una clínica pensada para que llegues con tranquilidad.",
+      title: "Una clÃ­nica pensada para que llegues con tranquilidad.",
       description:
-        "Desde el primer mensaje hasta el seguimiento posterior, cada paso está diseñado para que sepas qué esperar.",
+        "Desde el primer mensaje hasta el seguimiento posterior, cada paso estÃ¡ diseÃ±ado para que sepas quÃ© esperar.",
+    },
+    trust: {
+      eyebrow: "Confianza clínica",
+      title: "Señales claras para pedir turno con tranquilidad.",
+      description:
+        "La demo prioriza diagnóstico claro, planificación y seguimiento para que la experiencia se perciba médica, no de agencia.",
     },
     process: {
-      eyebrow: "Primera evaluación",
-      title: "Un proceso simple para empezar con información clara.",
+      eyebrow: "Primera evaluaciÃ³n",
+      title: "Un proceso simple para empezar con informaciÃ³n clara.",
       description:
-        "Escuchamos tu consulta, evaluamos tu caso y te orientamos sobre el tratamiento más conveniente.",
+        "Escuchamos tu consulta, evaluamos tu caso y te orientamos sobre el tratamiento mÃ¡s conveniente.",
     },
     pricing: {
-      eyebrow: "Atención",
-      title: "Opciones claras según el tipo de consulta.",
+      eyebrow: "AtenciÃ³n",
+      title: "Opciones claras segÃºn el tipo de consulta.",
       description:
-        "Cada paciente necesita un diagnóstico propio. Por eso priorizamos una evaluación inicial antes de definir valores finales.",
+        "Cada paciente necesita un diagnÃ³stico propio. Por eso priorizamos una evaluaciÃ³n inicial antes de definir valores finales.",
     },
     testimonials: {
       eyebrow: "Confianza",
       title: "Testimonios modelo para mostrar prueba social sin fingir un caso real.",
       description:
-        "Estos textos son ejemplos de contenido para la demo conceptual, no reseñas de pacientes reales.",
+        "Estos textos son ejemplos de contenido para la demo conceptual, no reseÃ±as de pacientes reales.",
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
       title: "Dudas comunes antes de pedir turno.",
       description:
-        "Queremos que llegues a la primera consulta con información clara y sin sorpresas.",
+        "Queremos que llegues a la primera consulta con informaciÃ³n clara y sin sorpresas.",
     },
   },
   services: [
     {
       title: "Implantes dentales seguros y personalizados",
       description:
-        "Planificación precisa, evaluación previa y seguimiento profesional para recuperar función, estética y confianza al sonreír.",
+        "PlanificaciÃ³n precisa, evaluaciÃ³n previa y seguimiento profesional para recuperar funciÃ³n, estÃ©tica y confianza al sonreÃ­r.",
     },
     {
-      title: "Ortodoncia estética",
+      title: "Ortodoncia estÃ©tica",
       description:
-        "Alternativas discretas para alinear tu sonrisa con controles ordenados y una experiencia cómoda durante el tratamiento.",
+        "Alternativas discretas para alinear tu sonrisa con controles ordenados y una experiencia cÃ³moda durante el tratamiento.",
     },
     {
-      title: "Estética dental",
+      title: "EstÃ©tica dental",
       description:
-        "Blanqueamiento, carillas y diseño de sonrisa con una mirada natural, cuidando armonía facial y salud bucal.",
+        "Blanqueamiento, carillas y diseÃ±o de sonrisa con una mirada natural, cuidando armonÃ­a facial y salud bucal.",
     },
     {
-      title: "Urgencias odontológicas",
+      title: "Urgencias odontolÃ³gicas",
       description:
-        "Atención para dolor, fracturas, inflamación o molestias que necesitan una respuesta rápida y orientación profesional.",
+        "AtenciÃ³n para dolor, fracturas, inflamaciÃ³n o molestias que necesitan una respuesta rÃ¡pida y orientaciÃ³n profesional.",
     },
     {
-      title: "Atención familiar",
+      title: "AtenciÃ³n familiar",
       description:
-        "Controles, limpiezas y tratamientos para adultos, jóvenes y niños en un entorno cercano y confiable.",
+        "Controles, limpiezas y tratamientos para adultos, jÃ³venes y niÃ±os en un entorno cercano y confiable.",
     },
     {
-      title: "Primera evaluación",
+      title: "Primera evaluaciÃ³n",
       description:
         "Revisamos tu caso, respondemos dudas y te explicamos el camino recomendado antes de iniciar cualquier tratamiento.",
     },
   ],
   portfolio: [
     {
-      niche: "Diagnóstico",
+      niche: "DiagnÃ³stico",
       title: "Primera consulta sin vueltas",
       result:
-        "Te explicamos qué está pasando, qué opciones tenés y qué pasos conviene seguir.",
+        "Te explicamos quÃ© estÃ¡ pasando, quÃ© opciones tenÃ©s y quÃ© pasos conviene seguir.",
       imageSrc: "/odontologia/hero.png",
-      visualBadge: "Evaluación",
-      visualDetail: "Diagnóstico claro",
+      visualBadge: "EvaluaciÃ³n",
+      visualDetail: "DiagnÃ³stico claro",
       visualPosition: "50% 42%",
     },
     {
-      niche: "Tecnología",
-      title: "Planificación precisa",
+      niche: "TecnologÃ­a",
+      title: "PlanificaciÃ³n precisa",
       result:
-        "Usamos recursos digitales para evaluar mejor cada caso y planificar tratamientos con más seguridad.",
+        "Usamos recursos digitales para evaluar mejor cada caso y planificar tratamientos con mÃ¡s seguridad.",
       imageSrc: "/odontologia/hero.png",
-      visualBadge: "Tecnología",
+      visualBadge: "TecnologÃ­a",
       visualDetail: "Plan digital",
       visualPosition: "58% 46%",
     },
     {
-      niche: "Cercanía",
+      niche: "CercanÃ­a",
       title: "Seguimiento personalizado",
       result:
-        "Acompañamos el proceso con controles, indicaciones claras y comunicación directa.",
+        "AcompaÃ±amos el proceso con controles, indicaciones claras y comunicaciÃ³n directa.",
       imageSrc: "/odontologia/hero.png",
       visualBadge: "Seguimiento",
       visualDetail: "Control cercano",
@@ -170,7 +185,7 @@ export const odontologiaLanding: LandingPageData = {
       step: "01",
       title: "Escribinos por WhatsApp",
       description:
-        "Contanos qué necesitás, si tenés dolor o qué tratamiento te interesa consultar.",
+        "Contanos quÃ© necesitÃ¡s, si tenÃ©s dolor o quÃ© tratamiento te interesa consultar.",
     },
     {
       step: "02",
@@ -180,7 +195,7 @@ export const odontologiaLanding: LandingPageData = {
     },
     {
       step: "03",
-      title: "Realizamos la evaluación",
+      title: "Realizamos la evaluaciÃ³n",
       description:
         "Revisamos tu caso, resolvemos dudas y definimos las opciones de tratamiento posibles.",
     },
@@ -188,41 +203,41 @@ export const odontologiaLanding: LandingPageData = {
       step: "04",
       title: "Plan personalizado",
       description:
-        "Recibís una recomendación clara con pasos, tiempos estimados y cuidados necesarios.",
+        "RecibÃ­s una recomendaciÃ³n clara con pasos, tiempos estimados y cuidados necesarios.",
     },
   ],
   pricing: [
     {
       name: "Consulta inicial",
-      price: "Primera evaluación",
+      price: "Primera evaluaciÃ³n",
       description: "Para entender tu caso y definir el mejor camino.",
       features: [
-        "Revisión odontológica",
-        "Orientación profesional",
+        "RevisiÃ³n odontolÃ³gica",
+        "OrientaciÃ³n profesional",
         "Plan de pasos recomendado",
-        "Coordinación por WhatsApp",
+        "CoordinaciÃ³n por WhatsApp",
       ],
     },
     {
       name: "Tratamientos personalizados",
-      price: "Según diagnóstico",
-      description: "Implantes, ortodoncia, estética dental y rehabilitación.",
+      price: "SegÃºn diagnÃ³stico",
+      description: "Implantes, ortodoncia, estÃ©tica dental y rehabilitaciÃ³n.",
       highlighted: true,
       features: [
-        "Evaluación del caso",
+        "EvaluaciÃ³n del caso",
         "Opciones de tratamiento",
         "Tiempos estimados",
-        "Seguimiento clínico",
+        "Seguimiento clÃ­nico",
         "Indicaciones claras",
       ],
     },
     {
       name: "Urgencias",
       price: "Prioridad",
-      description: "Para dolor, fracturas, inflamación o molestias repentinas.",
+      description: "Para dolor, fracturas, inflamaciÃ³n o molestias repentinas.",
       features: [
-        "Contacto rápido",
-        "Orientación inicial",
+        "Contacto rÃ¡pido",
+        "OrientaciÃ³n inicial",
         "Turno prioritario",
         "Indicaciones de cuidado",
       ],
@@ -231,57 +246,57 @@ export const odontologiaLanding: LandingPageData = {
   testimonials: [
     {
       quote:
-        "Ejemplo de testimonio para mostrar cómo se vería una reseña breve enfocada en claridad, trato y confianza.",
+        "Ejemplo de testimonio para mostrar cÃ³mo se verÃ­a una reseÃ±a breve enfocada en claridad, trato y confianza.",
       author: "Testimonio modelo",
       detail: "Contenido demostrativo",
     },
     {
       quote:
-        "La sección puede adaptarse con reseñas reales del negocio cuando el cliente autorice su uso comercial.",
+        "La secciÃ³n puede adaptarse con reseÃ±as reales del negocio cuando el cliente autorice su uso comercial.",
       author: "Prueba social modelo",
       detail: "Demo conceptual",
     },
     {
       quote:
-        "El objetivo es enseñar el formato: mensaje humano, resultado esperado y contexto del tratamiento.",
-      author: "Formato de reseña",
+        "El objetivo es enseÃ±ar el formato: mensaje humano, resultado esperado y contexto del tratamiento.",
+      author: "Formato de reseÃ±a",
       detail: "Ejemplo no real",
     },
   ],
   faq: [
     {
-      question: "¿Necesito una consulta antes de saber el precio?",
+      question: "Â¿Necesito una consulta antes de saber el precio?",
       answer:
-        "Sí. En tratamientos como implantes, ortodoncia o estética dental es importante evaluar tu caso para indicar un plan responsable.",
+        "SÃ­. En tratamientos como implantes, ortodoncia o estÃ©tica dental es importante evaluar tu caso para indicar un plan responsable.",
     },
     {
-      question: "¿Puedo pedir turno por WhatsApp?",
+      question: "Â¿Puedo pedir turno por WhatsApp?",
       answer:
-        "Sí. Esta demo muestra un flujo preparado para WhatsApp; al publicar para un cliente se conecta el número real del negocio.",
+        "SÃ­. Esta demo muestra un flujo preparado para WhatsApp; al publicar para un cliente se conecta el nÃºmero real del negocio.",
     },
     {
-      question: "¿Atienden urgencias odontológicas?",
+      question: "Â¿Atienden urgencias odontolÃ³gicas?",
       answer:
-        "Sí. Recibimos consultas por dolor, fracturas, inflamación y molestias repentinas con coordinación previa.",
+        "SÃ­. Recibimos consultas por dolor, fracturas, inflamaciÃ³n y molestias repentinas con coordinaciÃ³n previa.",
     },
     {
-      question: "¿Dónde está ubicada la clínica?",
+      question: "Â¿DÃ³nde estÃ¡ ubicada la clÃ­nica?",
       answer:
-        "Estamos en Palermo, CABA, cerca de avenidas principales y con fácil acceso en transporte público.",
+        "Estamos en Palermo, CABA, cerca de avenidas principales y con fÃ¡cil acceso en transporte pÃºblico.",
     },
   ],
   location: {
-    eyebrow: "Ubicación",
+    eyebrow: "UbicaciÃ³n",
     title: "Estamos en Palermo, CABA.",
     description:
-      "La clínica está ubicada en una zona accesible, ideal para pacientes que trabajan o viven cerca de Palermo, Recoleta, Belgrano y Almagro.",
+      "La clÃ­nica estÃ¡ ubicada en una zona accesible, ideal para pacientes que trabajan o viven cerca de Palermo, Recoleta, Belgrano y Almagro.",
     address: dentalNovaBrand.location,
-    neighborhood: "Palermo, Ciudad Autónoma de Buenos Aires",
+    neighborhood: "Palermo, Ciudad AutÃ³noma de Buenos Aires",
     hours,
     mapLabel: "Av. Santa Fe 2842",
   },
   contact: {
-    title: "Simulá una primera evaluación.",
+    title: "SimulÃ¡ una primera evaluaciÃ³n.",
     description:
       "Este formulario es demostrativo. Para usarlo con un cliente real, Nova Studio conecta el WhatsApp, el formulario y los datos comerciales definitivos.",
     email: dentalNovaBrand.email,
@@ -295,7 +310,7 @@ export const odontologiaLanding: LandingPageData = {
     formPlaceholders: {
       name: "Tu nombre",
       reason: "Ej: implantes, ortodoncia, urgencia",
-      message: "Contanos brevemente qué necesitás.",
+      message: "Contanos brevemente quÃ© necesitÃ¡s.",
     },
     submitLabel: "Simular consulta",
   },
@@ -308,3 +323,4 @@ export const odontologiaLanding: LandingPageData = {
     label: "Ver consulta",
   },
 };
+

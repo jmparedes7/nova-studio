@@ -1,6 +1,6 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
-import type { LandingPageData, LocationData } from "@/templates/types";
+import type { LandingPageData, LocationData } from "@/landing-system/types";
 
 type LocationSectionProps = {
   data: LocationData;
@@ -33,7 +33,7 @@ export function LocationSection({
               }`}
             >
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-                Dirección
+                DirecciÃ³n
               </p>
               <p className="mt-3 text-lg font-bold text-ink">{data.address}</p>
               <p className="mt-1 text-ink/64">{data.neighborhood}</p>
@@ -81,3 +81,4 @@ export function LocationSection({
     </section>
   );
 }
+

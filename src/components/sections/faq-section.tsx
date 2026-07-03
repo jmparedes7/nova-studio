@@ -1,7 +1,7 @@
-import { FadeIn } from "@/components/animation/fade-in";
+﻿import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { FaqItem, LandingPageData, SectionCopy } from "@/templates/types";
+import type { FaqItem, LandingPageData, SectionCopy } from "@/landing-system/types";
 
 type FaqSectionProps = {
   items: FaqItem[];
@@ -13,7 +13,7 @@ const defaultHeading: SectionCopy = {
   eyebrow: "FAQ",
   title: "Preguntas que conviene responder antes de vender.",
   description:
-    "Una landing premium también reduce fricción comercial antes de la primera conversación.",
+    "Una landing premium tambiÃ©n reduce fricciÃ³n comercial antes de la primera conversaciÃ³n.",
 };
 
 export function FaqSection({
@@ -54,3 +54,4 @@ export function FaqSection({
     </section>
   );
 }
+

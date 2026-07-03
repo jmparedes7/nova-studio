@@ -1,4 +1,4 @@
-import { templateNiches } from "@/data/niches";
+import { businessNiches } from "@/data/niches";
 
 export const landingSectionOrder = [
   "hero",
@@ -12,8 +12,8 @@ export const landingSectionOrder = [
 
 export type LandingSectionKey = (typeof landingSectionOrder)[number];
 
-export const templateBlueprint = {
-  supportedNiches: templateNiches,
+export const landingSystemBlueprint = {
+  supportedNiches: businessNiches,
   sectionOrder: landingSectionOrder,
   defaultConversionActions: [
     "WhatsApp",
