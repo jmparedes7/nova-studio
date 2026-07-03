@@ -1,11 +1,12 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import type { HeroData } from "@/templates/types";
+import type { HeroData, LandingPageData } from "@/templates/types";
 import Image from "next/image";
 
 type HeroSectionProps = {
   data: HeroData;
+  theme?: LandingPageData["theme"];
 };
 
 function WhatsappIcon({ className = "" }: { className?: string }) {
@@ -21,14 +22,19 @@ function WhatsappIcon({ className = "" }: { className?: string }) {
   );
 }
 
-export function HeroSection({ data }: HeroSectionProps) {
+export function HeroSection({ data, theme = "studio" }: HeroSectionProps) {
   const visual = data.visual;
   const isSystemVisual = visual?.mode === "system";
+  const isClinic = theme === "clinic";
 
   return (
     <section
       className={`relative overflow-hidden pb-18 pt-6 sm:pb-24 lg:pb-28 ${
-        isSystemVisual ? "bg-[#101713]" : "bg-[var(--landing-bg)]"
+        isSystemVisual
+          ? "bg-[#101713]"
+          : isClinic
+            ? "bg-[linear-gradient(180deg,#f7fffc_0%,#eef8f5_58%,#ffffff_100%)]"
+            : "bg-[var(--landing-bg)]"
       }`}
     >
       <Container>
@@ -45,7 +51,9 @@ export function HeroSection({ data }: HeroSectionProps) {
             className={`rounded-full border px-4 py-2 text-sm font-semibold transition hover:border-[var(--landing-accent)] ${
               isSystemVisual
                 ? "border-[#F6F1E8]/18 text-[#F6F1E8]"
-                : "border-ink/15 text-[var(--landing-ink)]"
+                : isClinic
+                  ? "border-[#cfe5df] bg-white/80 text-[#12302e] shadow-[0_10px_28px_rgba(15,79,74,0.06)]"
+                  : "border-ink/15 text-[var(--landing-ink)]"
             }`}
             href="#contacto"
           >
@@ -60,6 +68,8 @@ export function HeroSection({ data }: HeroSectionProps) {
                 className={`mb-4 inline-flex rounded-full border px-3 py-1.5 text-xs font-bold uppercase tracking-[0.16em] shadow-[0_10px_24px_rgba(21,23,22,0.05)] ${
                   isSystemVisual
                     ? "border-[#B8FF5C]/25 bg-[#B8FF5C]/10 text-[#B8FF5C]"
+                    : isClinic
+                      ? "border-[#d7ece6] bg-white text-[#0f4f4a]"
                     : "border-[var(--landing-accent-soft)] bg-white/70 text-[var(--landing-accent)]"
                 }`}
               >
@@ -68,13 +78,21 @@ export function HeroSection({ data }: HeroSectionProps) {
             ) : null}
             <p
               className={`text-sm font-semibold uppercase tracking-[0.24em] ${
-                isSystemVisual ? "text-[#B8FF5C]" : "text-[var(--landing-accent)]"
+                isSystemVisual
+                  ? "text-[#B8FF5C]"
+                  : isClinic
+                    ? "text-[#b88955]"
+                    : "text-[var(--landing-accent)]"
               }`}
             >
               {data.eyebrow}
             </p>
             <h1
-              className={`mt-4 max-w-4xl font-serif text-[2.9rem] leading-[3.12rem] sm:text-6xl sm:leading-[1.02] lg:text-[4.45rem] ${
+              className={`mt-4 max-w-4xl font-serif ${
+                isClinic
+                  ? "text-[2.65rem] leading-[2.95rem] sm:text-[3.8rem] sm:leading-[1.04] lg:text-[4.05rem]"
+                  : "text-[2.9rem] leading-[3.12rem] sm:text-6xl sm:leading-[1.02] lg:text-[4.45rem]"
+              } ${
                 isSystemVisual ? "text-[#F6F1E8]" : "text-[var(--landing-ink)]"
               }`}
             >
@@ -102,7 +120,11 @@ export function HeroSection({ data }: HeroSectionProps) {
             {data.microcopy ? (
               <p
                 className={`mt-3 text-sm font-medium ${
-                  isSystemVisual ? "text-[#F6F1E8]/58" : "text-ink/62"
+                  isSystemVisual
+                    ? "text-[#F6F1E8]/58"
+                    : isClinic
+                      ? "text-[#52706b]"
+                      : "text-ink/62"
                 }`}
               >
                 {data.microcopy}
@@ -112,7 +134,11 @@ export function HeroSection({ data }: HeroSectionProps) {
             <dl className="mt-8 grid max-w-2xl grid-cols-3 gap-2 sm:gap-3">
               {data.stats.map((stat) => (
                 <div
-                  className="rounded-2xl border border-ink/10 bg-white/65 px-3 py-3 shadow-[0_12px_34px_rgba(21,23,22,0.06)] backdrop-blur sm:p-4"
+                  className={`border bg-white/72 px-3 py-3 backdrop-blur sm:p-4 ${
+                    isClinic
+                      ? "rounded-[1.05rem] border-[#d7ece6] shadow-[0_10px_28px_rgba(15,79,74,0.06)]"
+                      : "rounded-2xl border-ink/10 shadow-[0_12px_34px_rgba(21,23,22,0.06)]"
+                  }`}
                   key={stat.label}
                 >
                   <dt className="whitespace-nowrap text-sm font-bold leading-5 text-[var(--landing-ink)] sm:text-xl">
@@ -199,9 +225,27 @@ export function HeroSection({ data }: HeroSectionProps) {
                 </div>
               ) : (
                 <>
-                  <div className="absolute -left-4 top-8 hidden h-24 w-24 rounded-full border border-[var(--landing-accent-soft)] bg-white/35 backdrop-blur sm:block" />
-                  <div className="relative overflow-hidden rounded-[1.6rem] border border-white/70 bg-white p-3 shadow-soft sm:rounded-[2rem] sm:p-4">
-                <div className="relative min-h-[390px] overflow-hidden rounded-[1.25rem] bg-fog sm:min-h-[500px] sm:rounded-[1.55rem]">
+                  {isClinic ? (
+                    <div className="absolute -right-5 top-10 hidden rounded-full border border-[#d7ece6] bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0f4f4a] shadow-[0_12px_34px_rgba(15,79,74,0.08)] sm:block">
+                      Atención coordinada
+                    </div>
+                  ) : (
+                    <div className="absolute -left-4 top-8 hidden h-24 w-24 rounded-full border border-[var(--landing-accent-soft)] bg-white/35 backdrop-blur sm:block" />
+                  )}
+                  <div
+                    className={`relative overflow-hidden border bg-white p-3 sm:p-4 ${
+                      isClinic
+                        ? "rounded-[1.25rem] border-[#d7ece6] shadow-[0_26px_70px_rgba(15,79,74,0.12)] sm:rounded-[1.55rem]"
+                        : "rounded-[1.6rem] border-white/70 shadow-soft sm:rounded-[2rem]"
+                    }`}
+                  >
+                <div
+                  className={`relative min-h-[390px] overflow-hidden bg-fog sm:min-h-[500px] ${
+                    isClinic
+                      ? "rounded-[0.95rem] sm:rounded-[1.15rem]"
+                      : "rounded-[1.25rem] sm:rounded-[1.55rem]"
+                  }`}
+                >
                   {visual?.imageSrc ? (
                     <>
                       <Image
@@ -212,7 +256,13 @@ export function HeroSection({ data }: HeroSectionProps) {
                         sizes="(min-width: 1024px) 46vw, 90vw"
                         src={visual.imageSrc}
                       />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,23,22,0)_40%,rgba(21,23,22,0.68)_100%)]" />
+                      <div
+                        className={`absolute inset-0 ${
+                          isClinic
+                            ? "bg-[linear-gradient(180deg,rgba(18,48,46,0.02)_36%,rgba(18,48,46,0.58)_100%)]"
+                            : "bg-[linear-gradient(180deg,rgba(21,23,22,0)_40%,rgba(21,23,22,0.68)_100%)]"
+                        }`}
+                      />
                     </>
                   ) : (
                     <div className="absolute inset-0 bg-bone p-4">

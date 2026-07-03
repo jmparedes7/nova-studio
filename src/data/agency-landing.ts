@@ -180,7 +180,8 @@ export const agencyLanding: LandingPageData = {
     {
       name: "Premium",
       price: "USD 450",
-      description: "La opción principal para negocios que quieren verse mejor y vender más claro.",
+      description:
+        "La opción principal para negocios que quieren verse mejor y vender más claro.",
       highlighted: true,
       features: [
         "Landing premium completa",
@@ -193,7 +194,8 @@ export const agencyLanding: LandingPageData = {
     {
       name: "Growth",
       price: "USD 650+",
-      description: "Para negocios que necesitan más contenido, variantes o acompañamiento.",
+      description:
+        "Para negocios que necesitan más contenido, variantes o acompañamiento.",
       features: [
         "Landing extendida",
         "Variantes por campaña",

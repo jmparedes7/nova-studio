@@ -1,12 +1,13 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { PortfolioItem, SectionCopy } from "@/templates/types";
+import type { LandingPageData, PortfolioItem, SectionCopy } from "@/templates/types";
 import Image from "next/image";
 
 type PortfolioSectionProps = {
   items: PortfolioItem[];
   heading?: SectionCopy;
+  theme?: LandingPageData["theme"];
 };
 
 const clinicalVisuals = [
@@ -31,15 +32,23 @@ const defaultHeading: SectionCopy = {
   eyebrow: "Portfolio",
   title: "Casos modelo pensados para vender por rubro.",
   description:
-    "Cada template parte de una estrategia de conversion distinta: no necesita lo mismo una clinica, un gimnasio o un profesional independiente.",
+    "Cada template parte de una estrategia de conversión distinta: no necesita lo mismo una clínica, un gimnasio o un profesional independiente.",
 };
 
 export function PortfolioSection({
   items,
   heading = defaultHeading,
+  theme = "studio",
 }: PortfolioSectionProps) {
+  const isClinic = theme === "clinic";
+
   return (
-    <section className="bg-[var(--landing-bg)] py-20 sm:py-24" id="portfolio">
+    <section
+      className={`py-20 sm:py-24 ${
+        isClinic ? "bg-[#f3fbf8]" : "bg-[var(--landing-bg)]"
+      }`}
+      id="portfolio"
+    >
       <Container>
         <SectionHeading
           eyebrow={heading.eyebrow}
@@ -53,7 +62,11 @@ export function PortfolioSection({
 
             return (
             <FadeIn
-              className="group overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-[0_20px_58px_rgba(21,23,22,0.08)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--landing-accent)] hover:shadow-[0_24px_68px_rgba(21,23,22,0.12)]"
+              className={`group overflow-hidden border bg-white transition duration-200 hover:-translate-y-0.5 hover:border-[var(--landing-accent)] ${
+                isClinic
+                  ? "rounded-[1.35rem] border-[#d8ece6] shadow-[0_18px_46px_rgba(15,79,74,0.08)] hover:shadow-[0_24px_58px_rgba(15,79,74,0.12)]"
+                  : "rounded-3xl border-ink/10 shadow-[0_20px_58px_rgba(21,23,22,0.08)] hover:shadow-[0_24px_68px_rgba(21,23,22,0.12)]"
+              }`}
               delay={index * 0.06}
               key={item.title}
             >
@@ -62,7 +75,7 @@ export function PortfolioSection({
                 className="block h-full"
                 href={item.href ?? "#contacto"}
               >
-                <div className="relative h-56 overflow-hidden bg-fog">
+                <div className={`relative h-56 overflow-hidden ${isClinic ? "bg-[#e6f4ef]" : "bg-fog"}`}>
                   {imageSrc ? (
                     <Image
                       alt={item.imageAlt ?? ""}
@@ -88,11 +101,21 @@ export function PortfolioSection({
                       </div>
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,23,22,0)_34%,rgba(21,23,22,0.62)_100%)]" />
+                  <div
+                    className={`absolute inset-0 ${
+                      isClinic
+                        ? "bg-[linear-gradient(180deg,rgba(18,48,46,0.02)_30%,rgba(18,48,46,0.56)_100%)]"
+                        : "bg-[linear-gradient(180deg,rgba(21,23,22,0)_34%,rgba(21,23,22,0.62)_100%)]"
+                    }`}
+                  />
                   <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-ink shadow-[0_10px_24px_rgba(21,23,22,0.1)] backdrop-blur">
                     {item.niche}
                   </span>
-                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/92 p-4 text-ink shadow-[0_16px_42px_rgba(21,23,22,0.16)] backdrop-blur">
+                  <div
+                    className={`absolute bottom-5 left-5 right-5 bg-white/92 p-4 text-ink shadow-[0_16px_42px_rgba(21,23,22,0.16)] backdrop-blur ${
+                      isClinic ? "rounded-[1rem]" : "rounded-2xl"
+                    }`}
+                  >
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--landing-accent)]">
                         {item.visualBadge ?? visual.badge}

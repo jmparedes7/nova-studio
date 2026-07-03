@@ -15,14 +15,17 @@ type LandingPageProps = {
 };
 
 export function LandingPage({ data }: LandingPageProps) {
+  const theme = data.theme ?? "studio";
+
   return (
-    <main className={`landing-theme landing-theme-${data.theme ?? "studio"}`}>
-      <HeroSection data={data.hero} />
+    <main className={`landing-theme landing-theme-${theme}`}>
+      <HeroSection data={data.hero} theme={theme} />
 
       {data.services?.length ? (
         <ServicesSection
           heading={data.sectionHeadings?.services}
           items={data.services}
+          theme={theme}
         />
       ) : null}
 
@@ -30,6 +33,7 @@ export function LandingPage({ data }: LandingPageProps) {
         <PortfolioSection
           heading={data.sectionHeadings?.portfolio}
           items={data.portfolio}
+          theme={theme}
         />
       ) : null}
 
@@ -37,6 +41,7 @@ export function LandingPage({ data }: LandingPageProps) {
         <ProcessSection
           heading={data.sectionHeadings?.process}
           steps={data.process}
+          theme={theme}
         />
       ) : null}
 
@@ -46,6 +51,7 @@ export function LandingPage({ data }: LandingPageProps) {
           ctaLabel={data.pricingCta?.label}
           heading={data.sectionHeadings?.pricing}
           plans={data.pricing}
+          theme={theme}
         />
       ) : null}
 
@@ -53,16 +59,17 @@ export function LandingPage({ data }: LandingPageProps) {
         <TestimonialsSection
           heading={data.sectionHeadings.testimonials}
           items={data.testimonials}
+          theme={theme}
         />
       ) : null}
 
       {data.faq?.length ? (
-        <FaqSection heading={data.sectionHeadings?.faq} items={data.faq} />
+        <FaqSection heading={data.sectionHeadings?.faq} items={data.faq} theme={theme} />
       ) : null}
 
-      {data.location ? <LocationSection data={data.location} /> : null}
+      {data.location ? <LocationSection data={data.location} theme={theme} /> : null}
 
-      {data.contact ? <ContactSection data={data.contact} /> : null}
+      {data.contact ? <ContactSection data={data.contact} theme={theme} /> : null}
 
       {data.floatingCta ? (
         <WhatsappFloatingButton

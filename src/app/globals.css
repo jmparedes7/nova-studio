@@ -61,16 +61,17 @@ a {
 }
 
 .landing-theme-clinic {
-  --landing-bg: #f4fbf9;
+  --landing-bg: #f7fffc;
   --landing-band: #ffffff;
-  --landing-soft: #e9f6f2;
+  --landing-soft: #eef8f5;
   --landing-ink: #12302e;
   --landing-muted: rgba(18, 48, 46, 0.68);
-  --landing-primary: #0f4f4a;
-  --landing-primary-hover: #0b6b63;
+  --landing-primary: #0a6f65;
+  --landing-primary-hover: #085b54;
   --landing-accent: #b88955;
   --landing-accent-soft: rgba(184, 137, 85, 0.18);
-  --landing-success: #d8f3ea;
+  --landing-success: #dcf5ed;
+  background: #f7fffc;
 }
 
 .landing-theme-warm {

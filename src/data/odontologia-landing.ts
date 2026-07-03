@@ -1,7 +1,4 @@
-import type {
-  BusinessBrand,
-  LandingPageData,
-} from "@/templates/types";
+import type { BusinessBrand, LandingPageData } from "@/templates/types";
 
 const whatsappMessage =
   "Hola Clínica Dental Nova, quiero solicitar una primera evaluación odontológica.";
@@ -39,15 +36,15 @@ export const odontologiaLanding: LandingPageData = {
     eyebrow: "Odontología integral en Palermo, CABA",
     title: "Cuidamos tu sonrisa con tecnología, calidez y criterio clínico.",
     description:
-      "Esta demo muestra cómo podría verse una landing premium para una clínica dental: implantes, ortodoncia estética, urgencias y odontología familiar con una primera evaluación clara.",
-    primaryCta: "Ver flujo de WhatsApp",
+      "Una experiencia modelo para una clínica dental moderna: tratamientos claros, primera evaluación guiada y un recorrido pensado para que el paciente sepa qué hacer desde el primer mensaje.",
+    primaryCta: "Simular consulta",
     secondaryCta: "Ver tratamientos",
     primaryHref: dentalNovaBrand.whatsappHref,
     secondaryHref: "#servicios",
-    statusLabel: "Turnos disponibles",
+    statusLabel: "Turnos demo",
     previewItems: ["Implantes", "Ortodoncia", "Urgencias"],
-    notificationTitle: "Turno solicitado",
-    notificationText: "Primera evaluación por WhatsApp",
+    notificationTitle: "Consulta recibida",
+    notificationText: "Primera evaluación coordinada",
     microcopy:
       "Demo conceptual: el WhatsApp se conecta al número real al publicar para un cliente.",
     visual: {
@@ -55,15 +52,15 @@ export const odontologiaLanding: LandingPageData = {
       imageAlt:
         "Dentista conversando con una paciente en un consultorio moderno",
       trustBadge: "Demo",
-      appointmentEyebrow: "Próximo turno",
+      appointmentEyebrow: "Próximo paso",
       appointmentTitle: "Evaluación inicial",
-      appointmentMeta: ["Palermo", "24 hs"],
+      appointmentMeta: ["Palermo", "24 hs hábiles"],
       detailEyebrow: "Tratamientos",
     },
     stats: [
-      { value: "Turnos", label: "claros" },
-      { value: "Trat.", label: "integrales" },
-      { value: "Conf.", label: "clínica" },
+      { value: "Eval.", label: "inicial" },
+      { value: "Plan", label: "claro" },
+      { value: "WhatsApp", label: "demo" },
     ],
   },
   sectionHeadings: {
@@ -253,22 +250,22 @@ export const odontologiaLanding: LandingPageData = {
   ],
   faq: [
     {
-      question: "Necesito una consulta antes de saber el precio?",
+      question: "¿Necesito una consulta antes de saber el precio?",
       answer:
         "Sí. En tratamientos como implantes, ortodoncia o estética dental es importante evaluar tu caso para indicar un plan responsable.",
     },
     {
-      question: "Puedo pedir turno por WhatsApp?",
+      question: "¿Puedo pedir turno por WhatsApp?",
       answer:
         "Sí. Esta demo muestra un flujo preparado para WhatsApp; al publicar para un cliente se conecta el número real del negocio.",
     },
     {
-      question: "Atienden urgencias odontológicas?",
+      question: "¿Atienden urgencias odontológicas?",
       answer:
         "Sí. Recibimos consultas por dolor, fracturas, inflamación y molestias repentinas con coordinación previa.",
     },
     {
-      question: "Dónde está ubicada la clínica?",
+      question: "¿Dónde está ubicada la clínica?",
       answer:
         "Estamos en Palermo, CABA, cerca de avenidas principales y con fácil acceso en transporte público.",
     },

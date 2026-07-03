@@ -1,23 +1,33 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { FaqItem, SectionCopy } from "@/templates/types";
+import type { FaqItem, LandingPageData, SectionCopy } from "@/templates/types";
 
 type FaqSectionProps = {
   items: FaqItem[];
   heading?: SectionCopy;
+  theme?: LandingPageData["theme"];
 };
 
 const defaultHeading: SectionCopy = {
   eyebrow: "FAQ",
   title: "Preguntas que conviene responder antes de vender.",
   description:
-    "Una landing premium tambien reduce friccion comercial antes de la primera conversacion.",
+    "Una landing premium también reduce fricción comercial antes de la primera conversación.",
 };
 
-export function FaqSection({ items, heading = defaultHeading }: FaqSectionProps) {
+export function FaqSection({
+  items,
+  heading = defaultHeading,
+  theme = "studio",
+}: FaqSectionProps) {
+  const isClinic = theme === "clinic";
+
   return (
-    <section className="py-20 sm:py-24" id="faq">
+    <section
+      className={`py-20 sm:py-24 ${isClinic ? "bg-[#f7fffc]" : ""}`}
+      id="faq"
+    >
       <Container>
         <SectionHeading
           eyebrow={heading.eyebrow}
@@ -27,7 +37,11 @@ export function FaqSection({ items, heading = defaultHeading }: FaqSectionProps)
         <div className="mx-auto mt-12 max-w-4xl space-y-4">
           {items.map((item, index) => (
             <FadeIn
-              className="rounded-3xl border border-ink/10 bg-white p-6"
+              className={`border bg-white p-6 ${
+                isClinic
+                  ? "rounded-[1.15rem] border-[#d8ece6]"
+                  : "rounded-3xl border-ink/10"
+              }`}
               delay={index * 0.04}
               key={item.question}
             >

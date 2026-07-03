@@ -1,26 +1,35 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import type { SectionCopy, ServiceItem } from "@/templates/types";
+import type { LandingPageData, SectionCopy, ServiceItem } from "@/templates/types";
 
 type ServicesSectionProps = {
   items: ServiceItem[];
   heading?: SectionCopy;
+  theme?: LandingPageData["theme"];
 };
 
 const defaultHeading: SectionCopy = {
   eyebrow: "Servicios",
   title: "Todo lo necesario para lanzar una presencia que convierte.",
   description:
-    "La landing no es una pieza aislada: combina estrategia, diseno, desarrollo y captacion.",
+    "La landing no es una pieza aislada: combina estrategia, diseño, desarrollo y captación.",
 };
 
 export function ServicesSection({
   items,
   heading = defaultHeading,
+  theme = "studio",
 }: ServicesSectionProps) {
+  const isClinic = theme === "clinic";
+
   return (
-    <section className="bg-[var(--landing-band)] py-20 sm:py-24" id="servicios">
+    <section
+      className={`py-20 sm:py-24 ${
+        isClinic ? "bg-white" : "bg-[var(--landing-band)]"
+      }`}
+      id="servicios"
+    >
       <Container>
         <SectionHeading
           eyebrow={heading.eyebrow}
@@ -33,14 +42,28 @@ export function ServicesSection({
 
             return (
             <FadeIn
-              className={`group rounded-3xl border border-ink/10 bg-[var(--landing-soft)] p-6 transition duration-200 hover:-translate-y-0.5 hover:border-[var(--landing-accent)] hover:bg-white hover:shadow-[0_18px_44px_rgba(21,23,22,0.08)] ${
-                isFeatured ? "md:col-span-2 lg:col-span-2 lg:p-8" : ""
+              className={`group border p-6 transition duration-200 hover:-translate-y-0.5 hover:border-[var(--landing-accent)] hover:bg-white ${
+                isClinic
+                  ? "rounded-[1.25rem] border-[#d8ece6] bg-[#f7fffc] shadow-[0_14px_34px_rgba(15,79,74,0.06)] hover:shadow-[0_18px_42px_rgba(15,79,74,0.1)]"
+                  : "rounded-3xl border-ink/10 bg-[var(--landing-soft)] hover:shadow-[0_18px_44px_rgba(21,23,22,0.08)]"
+              } ${
+                isFeatured
+                  ? `md:col-span-2 lg:col-span-2 lg:p-8 ${
+                      isClinic ? "bg-[#eef8f5]" : ""
+                    }`
+                  : ""
               }`}
               delay={index * 0.04}
               key={item.title}
             >
               <div className="mb-6 flex items-center justify-between gap-4">
-                <span className="grid size-10 place-items-center rounded-2xl border border-ink/10 bg-white text-sm font-bold text-[var(--landing-accent)] transition group-hover:border-[var(--landing-accent)] group-hover:bg-[var(--landing-bg)]">
+                <span
+                  className={`grid size-10 place-items-center border bg-white text-sm font-bold text-[var(--landing-accent)] transition group-hover:border-[var(--landing-accent)] ${
+                    isClinic
+                      ? "rounded-full border-[#d8ece6] group-hover:bg-[#fffaf5]"
+                      : "rounded-2xl border-ink/10 group-hover:bg-[var(--landing-bg)]"
+                  }`}
+                >
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {isFeatured ? (
